@@ -1,0 +1,33 @@
+.button{
+  padding: 10px 10px; 
+  
+  background: none;
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.button:hover{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+
+
+.black{
+  background: black;
+
+  border: 1px solid rgba(0, 0, 0, 0);
+
+  color: white;
+}
+
+.black:hover{
+  background: none;
+
+  border: 1px solid black;
+
+  color: black;
+}

@@ -1,0 +1,102 @@
+header{
+  height: 95px;
+  display: flex;
+  align-items: center;
+}
+
+.header__container > div{
+  display: flex;
+  align-items: center;
+}
+
+
+
+.header__container-links{
+  gap: 40px;
+}
+
+
+.header__container-links *{
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.header__container-links *:hover{
+  color: rgba(0, 0, 0);
+}
+
+
+
+.header__select{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  cursor: pointer;
+}
+
+
+
+
+.header__logo{
+  width: 80px;
+}
+
+
+
+
+.header__container-personals{
+  gap: 5px;
+  position: relative;
+}
+
+
+.header__container-personals button *{
+  pointer-events: none;
+}
+
+
+.header__container-personals button:nth-of-type(1), .header__container-personals button:nth-of-type(2){
+  padding: 5px 5px;
+}
+
+
+
+hr{
+  height: 25px;
+  width: 1px;
+
+  border: none;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+
+.header__language-modal{
+  width: 40px;
+
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 110%;
+  left: 22%;
+
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  transition: 0.1s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.active{
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+.header__language-modal button{
+  padding: 10px 10px!important;
+  border-radius: 0;
+}
