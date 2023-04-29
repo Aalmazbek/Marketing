@@ -80,7 +80,7 @@ function Header() {
   return (
     <header>
       <div className={`container header__container`}>
-        <div className={`header__container-links`}>
+        <nav className={`header__container-links`}>
           <img className={`header__logo`} src={mainLogoLight} alt="ZONE logo" />
           <a href="#">Home</a>
           <a href="#">Components</a>
@@ -98,7 +98,7 @@ function Header() {
             <Button elem="About Us"/>
             <Button elem="Contacts"/>
           </div>
-        </div>
+        </nav>
 
         <div className={`header__container-personals`}>
           <Button className={`search-button ${isSearchModal ? 'hide' : ''}`} elem={<img src={searchIcon} alt='search icon' />} onClick={() => toggleModal(isSearchModal, setSearchModal)} />
@@ -138,7 +138,7 @@ function Header() {
 
           <Button className={`mobile-header__close-button`} elem={<img src={crossIcon} alt="cross icon" />} onClick={() => setMobileMenuModal(false)} />
 
-          <div className={`mobile-header__links`}>
+          <nav className={`mobile-header__links`}>
             <Button elem={'Home'}/>
             <Button elem={'Components'}/>
             <Button 
@@ -159,7 +159,7 @@ function Header() {
               <Button elem="Contacts"/>
             </div>
             <Button elem={'Documentation'}/>
-          </div>
+          </nav>
         </div>
       </div>
     </header>
