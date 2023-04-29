@@ -46,6 +46,21 @@ function Header() {
   }
 
 
+
+  useEffect(() => {
+    const body = document.querySelector('body')
+
+    if (isMobileMenuModal) {
+      body.style.overflow = 'hidden'
+    } else if(!isMobileMenuModal){
+      body.style.overflow = 'auto'
+    }
+  }, [isMobileMenuModal])
+
+
+  
+  const header = useRef()
+
   useEffect(() => {
     document.addEventListener('click', e => {
       if (!e.target.classList.contains('lang-button')) {
@@ -74,11 +89,19 @@ function Header() {
         setMobileMenuModal(false)
       }
     })
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 1) {
+        header.current.classList.add('is-pinned')
+      } else{
+        header.current.classList.remove('is-pinned')
+      }
+    })
   }, [])
 
 
   return (
-    <header>
+    <header ref={header}>
       <div className={`container header__container`}>
         <nav className={`header__container-links`}>
           <img className={`header__logo`} src={mainLogoLight} alt="ZONE logo" />
@@ -142,6 +165,7 @@ function Header() {
             <Button elem={'Home'}/>
             <Button elem={'Components'}/>
             <Button 
+              className={`header__select-button`}
               elem={
                 <p className='header__select' >
                   Pages 

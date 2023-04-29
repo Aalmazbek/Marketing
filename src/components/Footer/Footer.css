@@ -1,0 +1,371 @@
+footer{
+  /* padding: 4vh 0; */
+}
+
+
+.footer__newsletter{
+  width: 100%;
+
+  padding: 65px 0;
+
+  background: rgba(249, 250, 251, 1);
+  /* background: red; */
+}
+
+
+.footer__newsletter-title{
+  display: flex;
+  align-items: center;
+  gap: 1.5vw;
+}
+
+
+.footer__newsletter-title > img{
+  width: 11vh;
+}
+
+
+
+.footer__newsletter-title > div{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+}
+
+
+.footer__newsletter-title h1{
+  font-size: 24px;
+}
+
+
+
+.footer__newsletter-title p{
+  font-size: 14px;
+  color: rgba(99, 115, 129, 1);
+}
+
+
+
+
+.footer__newsletter-form-section form{
+  height: 8vh;
+  max-height: 56px;
+
+  display: flex;
+}
+
+
+.footer__newsletter-form-section input{
+  width: 25vw;
+
+  padding: 0 5%;
+
+  background: rgba(145, 158, 171, 0.08);
+
+  border: none;
+  border-radius: 10px 0 0 10px;
+}
+
+
+
+.footer__newsletter-form-section button{
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+
+
+
+
+
+.footer__main{
+  padding: 10vh 0 4vh 0;
+}
+
+
+.footer__main-container{
+  display: flex;
+  flex-direction: column;
+  gap: 12vh;
+}
+
+
+.footer__main-content{
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.footer__title{
+  width: 100%;
+
+  max-width: 300px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  line-height: 200%;
+}
+
+
+.footer__title-logo{
+  width: 90px;
+}
+
+
+
+.footer__title p{
+  color: rgba(99, 115, 129, 1);
+}
+
+
+
+.footer__title-socials{
+  display: flex;
+  gap: 10px;
+}
+
+
+.footer__title-socials a:hover{
+  opacity: 0.6;
+}
+
+.footer__title-socials a:active{
+  opacity: 1;
+}
+
+
+.footer__title-socials a img{
+  width: 25px;
+}
+
+
+
+
+.footer__contacts{
+  width: 30%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer__contacts address{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-style: normal;
+  white-space: nowrap;
+}
+
+
+
+
+.footer__form-section{
+  z-index: 10;
+}
+
+
+.footer__form-section form{
+  height: 8vh;
+  max-height: 56px;
+
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+
+.footer__form-section input{
+  width: 250px;
+
+  padding: 0 5%;
+
+  background: rgba(145, 158, 171, 0.08);
+
+  border: none;
+  border-radius: 10px;
+}
+
+
+
+.footer__form-section button{
+  min-width: 55px;
+}
+
+
+.footer__form-section button img{
+  width: 60%;
+  transform: rotate(-90deg);
+}
+
+
+
+
+
+.footer__copyright{
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.footer__copyright *{
+  font-size: 12px;
+  color: rgb(126, 141, 154);
+}
+
+
+
+.footer__copyright > nav{
+  display: flex;
+  gap: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1023px){
+  .footer__newsletter-container{
+    flex-direction: column;
+    gap: 3vh;
+  }
+
+
+  .footer__newsletter-title{
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer__newsletter-title > div{
+    gap: 15px;
+  }
+
+
+
+
+  .footer__newsletter-form-section{
+    width: 100%;
+  }
+
+
+  .footer__newsletter-form-section form{
+    max-width: 450px;
+
+    margin: 0 auto;
+  }
+
+
+  .footer__newsletter-form-section form input{
+    width: 100%;
+  }
+
+
+
+
+  .footer__main-container{
+    gap: 6vh;
+  }
+
+
+  .footer__main-content{
+    flex-direction: column;
+    gap: 40px;
+  }
+
+
+  .footer__main-content > section{
+    width: 100%;
+    max-width: none;
+    align-items: center;
+  }
+
+
+
+  .footer__title{
+    text-align: center;
+  }
+
+
+
+
+  .footer__form-section form{
+    position: relative;
+  }
+
+
+  .footer__form-section form input{
+    width: 100%;
+    max-width: none;
+
+    border-radius: 10px;
+  }
+
+
+
+  .footer__form-section form button{
+    min-width: 50px;
+    width: 15%;
+    max-width: 70px;
+    height: 90%;
+
+    position: absolute;
+    top: 5%;
+    right: 0.3%;
+
+    border-radius: 10px;
+  }
+
+
+  .footer__form-section form button img{
+    width: 40%;
+  }
+
+
+
+
+
+  .footer__copyright{
+    flex-direction: column;
+    gap: 4vh;
+  }
+
+
+  .footer__copyright > nav{
+    gap: 15vw;
+  }
+
+}
+
+
+@media screen and (max-width: 768px){
+  .footer__form-section form button{
+    right: 0.5%;
+  }
+}
