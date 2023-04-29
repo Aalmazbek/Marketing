@@ -71,7 +71,6 @@ function Header() {
       const burgerMenuBtnMobile = document.querySelector('.burger-menu-button_mobile')
       const mobileHeaderMenuModal = document.querySelector('.mobile-header__menu-modal')
       if (!e.composedPath().includes(mobileHeaderMenuModal) && !e.composedPath().includes(burgerMenuBtnMobile)) {
-        console.log('false');
         setMobileMenuModal(false)
       }
     })
