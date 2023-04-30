@@ -16,6 +16,10 @@
   background: rgba(0, 0, 0, 0.1);
 }
 
+.button:active{
+  background: none;
+}
+
 
 
 .black{
@@ -28,6 +32,10 @@
 
 .black:hover{
   background: rgba(69, 79, 91, 1);
+}
+
+.black:active{
+  background: black;
 }
 
 
@@ -44,6 +52,10 @@
   background: rgba(179, 32, 14, 1);
 }
 
+.orange:active{
+  background: rgba(250, 84, 28, 1);
+}
+
 
 
 .disabled{
@@ -56,6 +68,57 @@
 .disabled:hover{
   background: rgba(145, 158, 171, 0.24);
   color: rgba(145, 158, 171, 0.5);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (prefers-color-scheme: dark) {
+  .button{
+    white-space: nowrap;
+    color: white;
+  }
+  
+  .button:hover{
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+
+
+
+  .black{
+    background: white;
+    color: black;
+  }
+
+  .black:hover{
+    background: rgb(170, 170, 170);
+  }
+
+
+
+  .disabled{
+    background: rgba(145, 158, 171, 0.2);
+    color: rgba(145, 158, 171, 0.5)!important;
+  
+    pointer-events: none;
+  }
+  
+  .disabled:hover{
+    background: rgba(145, 158, 171, 0.24);
+    color: rgba(145, 158, 171, 0.5);
+  }
 }
 
 
@@ -95,5 +158,15 @@
 
   .orange:active{
     background: rgba(179, 32, 14, 1);
+  }
+
+
+
+
+
+  @media (prefers-color-scheme: dark) {
+    .button:active{
+      background: rgba(255, 255, 255, 0.1);
+    }
   }
 }

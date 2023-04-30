@@ -5,16 +5,27 @@ import './Header.css'
 import css from './Header.module.css'
 import mainLogoLight from './assets/mainLogo-lightMode.svg'
 import mainLogoDark from './assets/mainLogo-darkMode.svg'
-import bottomArrow from './assets/bottomArrow-lightMode.svg'
-import searchIcon from './assets/searchIcon.svg'
-import languageIcon from './assets/languageIcon.svg'
-import burgerMenuIcon from './assets/burger-menu-icon.svg'
-import crossIcon from './assets/crossIcon.svg'
+import bottomArrowLight from './assets/bottomArrow-lightMode.svg'
+import bottomArrowDark from './assets/bottomArrow-darkMode.svg'
+import searchIconLight from './assets/searchIcon-lightMode.svg'
+import searchIconDark from './assets/searchIcon-darkMode.svg'
+import languageIconLight from './assets/languageIcon-lightMode.svg'
+import languageIconDark from './assets/languageIcon-darkMode.svg'
+import burgerMenuIconLight from './assets/burgerMenuIcon-lightMode.svg'
+import burgerMenuIconDark from './assets/burgerMenuIcon-darkMode.svg'
+import crossIconLight from './assets/crossIcon-lightMode.svg'
+import crossIconDark from './assets/crossIcon-darkMode.svg'
 import Button from '../Button/Button'
+import { useSelector } from 'react-redux'
+
+
+
+
 
 
 
 function Header() {
+  const darkScheme = useSelector(state => state.darkScheme.value)
 
   const { t, i18n } = useTranslation()
   
@@ -104,12 +115,12 @@ function Header() {
     <header ref={header}>
       <div className={`container header__container`}>
         <nav className={`header__container-links`}>
-          <img className={`header__logo`} src={mainLogoLight} alt="ZONE logo" />
+          <img className={`header__logo`} src={darkScheme ? mainLogoDark : mainLogoLight} alt="ZONE logo" />
           <a href="#">Home</a>
           <a href="#">Components</a>
           <p className='header__select' onClick={() => toggleModal(isSelectModal, setSelectModal)}>
             Pages 
-            <img src={bottomArrow} alt="bottom arrow" className={`${isSelectModal ? 'rotate180deg' : ''}`} />
+            <img src={darkScheme ? bottomArrowDark : bottomArrowLight} alt="bottom arrow" className={`${isSelectModal ? 'rotate180deg' : ''}`} />
           </p>
           <a href="#">Documentation</a>
 
@@ -124,8 +135,8 @@ function Header() {
         </nav>
 
         <div className={`header__container-personals`}>
-          <Button className={`search-button ${isSearchModal ? 'hide' : ''}`} elem={<img src={searchIcon} alt='search icon' />} onClick={() => toggleModal(isSearchModal, setSearchModal)} />
-          <Button className={`lang-button`} elem={<img src={languageIcon} alt='language icon' />} onClick={() => toggleModal(isLangModal, setLangModal)} />
+          <Button className={`search-button ${isSearchModal ? 'hide' : ''}`} elem={<img src={darkScheme ? searchIconDark : searchIconLight} alt='search icon' />} onClick={() => toggleModal(isSearchModal, setSearchModal)} />
+          <Button className={`lang-button`} elem={<img src={darkScheme ? languageIconDark : languageIconLight} alt='language icon' />} onClick={() => toggleModal(isLangModal, setLangModal)} />
           <hr />
           <Button elem="Login" />
           <Button elem="Join Us" mod='black' />
@@ -137,29 +148,29 @@ function Header() {
 
           <form className={`header__search-modal ${isSearchModal ? 'search-active' : ''}`} onSubmit={handleSubmit}>
             <input type="text" className={`header__search-input`} value={inputValue} onChange={e => setInputValue(e.target.value)} />
-            <input type="image" className={`header__search-submit`} src={searchIcon} alt="search icon" name='submit' />
+            <input type="image" className={`header__search-submit`} src={darkScheme ? searchIconDark : searchIconLight} alt="search icon" name='submit' />
           </form>
         </div>
       </div>
 
       <div className={`container header__container_mobile`}>
-        <img className={`header__logo`} src={mainLogoLight} alt="ZONE logo" />
+        <img className={`header__logo`} src={darkScheme ? mainLogoDark : mainLogoLight} alt="ZONE logo" />
 
         <div className={`header__burger-menu`}>
-          <Button className={`burger-menu-button_mobile`} elem={<img src={burgerMenuIcon} alt='burger menu icon' />} onClick={() => toggleModal(isMobileMenuModal, setMobileMenuModal)} />
+          <Button className={`burger-menu-button_mobile`} elem={<img src={darkScheme ? burgerMenuIconDark : burgerMenuIconLight} alt='burger menu icon' />} onClick={() => toggleModal(isMobileMenuModal, setMobileMenuModal)} />
 
-          <Button className={`search-button_mobile ${isMobileSearchModal ? 'hide' : ''}`} elem={<img src={searchIcon} alt='search icon' />} onClick={() => toggleModal(isMobileSearchModal, setMobileSearchModal)} />
+          <Button className={`search-button_mobile ${isMobileSearchModal ? 'hide' : ''}`} elem={<img src={darkScheme ? searchIconDark : searchIconLight} alt='search icon' />} onClick={() => toggleModal(isMobileSearchModal, setMobileSearchModal)} />
 
           <form className={`header__search-modal header__search-modal-mobile ${isMobileSearchModal ? 'search-modal-mobile_active' : ''}`} onSubmit={handleSubmit}>
             <input type="text" className={`header__search-input header__search-input-mobile`} value={mobileInputValue} onChange={e => setMobileInputValue(e.target.value)} />
-            <input type="image" className={`header__search-submit header__search-submit-mobile`} src={searchIcon} alt="search icon" name='submit' />
+            <input type="image" className={`header__search-submit header__search-submit-mobile`} src={darkScheme ? searchIconDark : searchIconLight} alt="search icon" name='submit' />
           </form>
         </div>
 
         <div className={`container mobile-header__menu-modal ${isMobileMenuModal ? 'mobile-header__menu-modal_active' : ''}`}>
-          <img className={`header__logo mobile-header__logo`} src={mainLogoLight} alt="ZONE logo" />
+          <img className={`header__logo mobile-header__logo`} src={darkScheme ? mainLogoDark : mainLogoLight} alt="ZONE logo" />
 
-          <Button className={`mobile-header__close-button`} elem={<img src={crossIcon} alt="cross icon" />} onClick={() => setMobileMenuModal(false)} />
+          <Button className={`mobile-header__close-button`} elem={<img src={darkScheme ? crossIconDark : crossIconLight} alt="cross icon" />} onClick={() => setMobileMenuModal(false)} />
 
           <nav className={`mobile-header__links`}>
             <Button elem={'Home'}/>
@@ -169,7 +180,7 @@ function Header() {
               elem={
                 <p className='header__select' >
                   Pages 
-                  <img src={bottomArrow} alt="bottom arrow" className={`${isMobileSelect ? 'rotate180deg' : ''}`} />
+                  <img src={darkScheme ? bottomArrowDark : bottomArrowLight} alt="bottom arrow" className={`${isMobileSelect ? 'rotate180deg' : ''}`} />
                 </p>
               } 
               onClick={() => toggleModal(isMobileSelect, setMobileSelect)}
