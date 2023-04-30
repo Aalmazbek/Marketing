@@ -4,7 +4,8 @@ import React, { useState } from 'react'
 import './Footer.css'
 import Button from '../Button/Button'
 
-import mainLogo from './assets/mainLogo-lightMode.svg'
+import mainLogoLight from './assets/mainLogo-lightMode.svg'
+import mainLogoDark from './assets/mainLogo-darkMode.svg'
 import newsletterIcon from './assets/newsletterIcon.svg'
 import facebookIcon from './assets/facebookIcon-lightMode.svg'
 import instagramIcon from './assets/instagramIcon-lightMode.svg'
@@ -13,9 +14,11 @@ import twitterIcon from './assets/twitterIcon-lightMode.svg'
 import letterIcon from './assets/letterIcon-lightMode.svg'
 import geopositionIcon from './assets/geopositionIcon-lightMode.svg'
 import arrowIcon from './assets/arrow-darkMode.svg'
+import { useSelector } from 'react-redux'
 
 
 function Footer() {
+  const darkScheme = useSelector(state => state.darkScheme.value)
 
   const [newsletterInputValue, setNewsletterInputValue] = useState('')
   const [emailInputValue, setEmailInputValue] = useState('')
@@ -52,7 +55,7 @@ function Footer() {
         <div className='container footer__main-container'>
           <div className='footer__main-content'>
             <section className='footer__title'>
-              <img className='footer__title-logo' src={mainLogo} alt="ZONE-logo" />
+              <img className='footer__title-logo' src={darkScheme ? mainLogoDark : mainLogoLight} alt="ZONE-logo" />
 
               <p>The starting point for your next project based on easy-to-customize Material-UI © helps you build apps faster and better.</p>
 
