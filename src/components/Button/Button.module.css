@@ -1,10 +1,13 @@
 .button{
   padding: 10px 15px; 
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
   background: none;
   border: none;
   border-radius: 10px;
-
   
   transition: 0.2s;
   cursor: pointer;

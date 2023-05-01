@@ -1,0 +1,186 @@
+.OfflineSEOAnalyse{
+  width: 100%;
+
+  padding: 160px 0;
+  
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) -1.23%, #000000 80%), url('./assets/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  text-align: center;
+}
+
+
+.OfflineSEOAnalyse *{
+  color: white;
+}
+
+.OfflineSEOAnalyse__container{
+  flex-direction: column;
+  gap: 24px;
+}
+
+
+.OfflineSEOAnalyse__container h1{
+  font-size: 64px;
+}
+
+
+
+.OfflineSEOAnalyse__container p{
+  max-width: 500px;
+
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+
+
+.OfflineSEOAnalyse__form{
+  width: 100%;
+  max-width: 760px;
+  height: 64px;
+
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+
+  border-radius: 10px;
+}
+
+
+hr{
+  height: 50%;
+  width: 1px;
+
+  background: rgba(145, 158, 171, 0.24);
+
+  border: none;
+}
+
+
+
+.OfflineSEOAnalyse__form label{
+  width: 50%;
+  height: 100%;
+
+  padding: 0 0 0 25px;
+
+  display: flex;
+  align-items: center;
+}
+
+.OfflineSEOAnalyse__form label:focus-within{
+  outline: 1px solid white;
+}
+
+
+.OfflineSEOAnalyse__form label img{
+  width: 30px;
+}
+
+
+.OfflineSEOAnalyse__form label input{
+  width: 100%;
+  height: 100%;
+
+  padding: 0 10px 0 10px;
+
+  background: transparent;
+
+  border: none;
+  outline: none;
+}
+
+
+.OfflineSEOAnalyse__form label input::placeholder{
+  color: rgba(145, 158, 171, 1);
+}
+
+
+
+
+.OfflineSEOAnalyse__form-submit{
+  padding: 0 20px;
+  height: 48px;
+  margin: 0 8px 0 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 992px) {
+  .OfflineSEOAnalyse__form{
+    width: 100%;
+    max-width: 350px;
+    height: fit-content;
+  
+    margin-top: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    background: transparent;
+    
+    border-radius: 10px;
+  }
+
+
+  hr{
+    display: none;
+  }
+
+  
+  
+  .OfflineSEOAnalyse__form label{
+    width: 100%;
+    height: 56px;
+    
+    padding: 0 0 0 25px;
+    display: flex;
+    
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);
+
+    border-radius: 10px;
+  }
+
+
+  .OfflineSEOAnalyse__form label input{
+    padding: 0 10px 0 25px;
+  }
+
+
+
+  .OfflineSEOAnalyse__form-submit{
+    width: 100%;
+    height: 56px;
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 600px) {
+  .OfflineSEOAnalyse__container h1{
+    font-size: 40px;
+  }
+}

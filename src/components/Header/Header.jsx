@@ -152,8 +152,8 @@ function Header() {
           <Button elem={t("header.join-us")} mod='black' />
 
           <div className={`header__language-modal ${isLangModal ? 'active' : ''}`}>
-            <Button elem="RU" mod={lang == 'ru' ? `disabled` : ''} onClick={() => changeLanguage('ru')} />
             <Button elem="EN" mod={lang == 'en' ? `disabled` : ''} onClick={() => changeLanguage('en')} />
+            <Button elem="RU" mod={lang == 'ru' ? `disabled` : ''} onClick={() => changeLanguage('ru')} />
           </div>
 
           <form className={`header__search-modal ${isSearchModal ? 'search-active' : ''}`} onSubmit={handleSubmit}>
@@ -191,8 +191,8 @@ function Header() {
             </div>
 
             <div className={`header__language-modal mobile-header__language-modal ${isLangModal ? 'active' : ''}`}>
-              <Button elem="RU" mod={lang == 'ru' ? `disabled` : ''} onClick={() => changeLanguage('ru')} />
               <Button elem="EN" mod={lang == 'en' ? `disabled` : ''} onClick={() => changeLanguage('en')} />
+              <Button elem="RU" mod={lang == 'ru' ? `disabled` : ''} onClick={() => changeLanguage('ru')} />
             </div>
           </div>
           

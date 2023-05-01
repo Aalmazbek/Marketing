@@ -14,6 +14,13 @@
       "contacts": "Contacts"
     }
   },
+  "offlineSEOAnalyse": {
+    "title": "Offline SEO",
+    "description": "Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit amet eros.",
+    "email-placeholder": "Email",
+    "website-placeholder": "Website URL",
+    "button-text": "Analyse"
+  },
   "newsletter": {
     "title": "Sign Up For Newsletter",
     "description": "Receive 50% discount on first project",
