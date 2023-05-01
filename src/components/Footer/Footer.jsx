@@ -23,15 +23,7 @@ function Footer() {
   const dispatch = useDispatch()
 
 
-  const { t, i18n } = useTranslation()
-  
-  const lang = useSelector(state => state.general.lang)
-  const changeLanguage = (str) => {
-    setTimeout(() => {
-      i18n.changeLanguage(str)
-      dispatch(changeLang(str))
-    }, 200)
-  }
+  const { t } = useTranslation()  
 
 
 
