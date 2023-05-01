@@ -21,7 +21,7 @@ i18n
   .use(I18nextBrowserLanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: JSON.parse(localStorage.getItem('lang')),
+    fallbackLng: JSON.parse(localStorage.getItem('lang')) || 'en',
     debug: true,
     detection: {
       order: ['queryString', 'cookie'],
