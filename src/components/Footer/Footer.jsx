@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-
+import { useDispatch, useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next'
 
 import './Footer.css'
 import Button from '../Button/Button'
@@ -14,11 +15,25 @@ import twitterIcon from './assets/twitterIcon-lightMode.svg'
 import letterIcon from './assets/letterIcon-lightMode.svg'
 import geopositionIcon from './assets/geopositionIcon-lightMode.svg'
 import arrowIcon from './assets/arrow-darkMode.svg'
-import { useSelector } from 'react-redux'
+import { changeLang } from '../../redux'
 
 
 function Footer() {
-  const darkScheme = useSelector(state => state.darkScheme.value)
+  const darkScheme = useSelector(state => state.general.darkScheme)
+  const dispatch = useDispatch()
+
+
+  const { t, i18n } = useTranslation()
+  
+  const lang = useSelector(state => state.general.lang)
+  const changeLanguage = (str) => {
+    setTimeout(() => {
+      i18n.changeLanguage(str)
+      dispatch(changeLang(str))
+    }, 200)
+  }
+
+
 
   const [newsletterInputValue, setNewsletterInputValue] = useState('')
   const [emailInputValue, setEmailInputValue] = useState('')
@@ -37,15 +52,15 @@ function Footer() {
             <img src={newsletterIcon} alt="email-icon" />
 
             <div>
-              <h1>Sign Up For Newsletter</h1>
-              <p>Receive 50% discount on first project</p>
+              <h1>{t("newsletter.title")}</h1>
+              <p>{t("newsletter.description")}</p>
             </div>
           </section>
 
           <section className='footer__newsletter-form-section'>
             <form onSubmit={e => handleSubmit(e, setNewsletterInputValue)}>
-              <input type="email" placeholder='Enter your email' value={newsletterInputValue} onChange={(e) => setNewsletterInputValue(e.target.value)} required />
-              <Button elem={`Sign Up`} mod={'orange'} />
+              <input type="email" placeholder={t("newsletter.input-placeholder")} value={newsletterInputValue} onChange={(e) => setNewsletterInputValue(e.target.value)} required />
+              <Button elem={t("newsletter.button")} mod={'orange'} />
             </form>
           </section>  
         </div>
@@ -57,7 +72,7 @@ function Footer() {
             <section className='footer__title'>
               <img className='footer__title-logo' src={darkScheme ? mainLogoDark : mainLogoLight} alt="ZONE-logo" />
 
-              <p>The starting point for your next project based on easy-to-customize Material-UI © helps you build apps faster and better.</p>
+              <p>{t("footer.text")}</p>
 
               <div className='footer__title-socials'>
                 <a href="#"><img src={facebookIcon} alt="facebook-icon" /></a>
@@ -69,23 +84,23 @@ function Footer() {
 
             <section className='footer__contacts'>
               <address><img src={letterIcon} alt="letter-icon" /> info@example.com</address>
-              <address><img src={geopositionIcon} alt="geoposition-icon" /> 655 Schaefer Dale</address>
+              <address><img src={geopositionIcon} alt="geoposition-icon" /> {t("footer.address")}</address>
             </section>
 
             <section className='footer__form-section'>
               <form onSubmit={e => handleSubmit(e, setEmailInputValue)}>
-                <input type="email" placeholder='Email adress' value={emailInputValue} onChange={e => setEmailInputValue(e.target.value)} required />
+                <input type="email" placeholder={t("footer.input-placeholder")} value={emailInputValue} onChange={e => setEmailInputValue(e.target.value)} required />
                 <Button elem={<img src={arrowIcon} alt='arrow-icon' />} mod={'orange'} />
               </form>
             </section>
           </div>
 
           <section className='footer__copyright'>
-            <p>© 2021. All rights reserved</p>
+            <p>{t("footer.copyright")}</p>
 
             <nav>
-              <a href="#">Help Center</a>
-              <a href="#">Terms of Service</a>
+              <a href="#">{t("footer.help-center")}</a>
+              <a href="#">{t("footer.terms-of-service")}</a>
             </nav>
           </section>
         </div>

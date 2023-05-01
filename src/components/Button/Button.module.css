@@ -21,6 +21,11 @@
 }
 
 
+.button *{
+  pointer-events: none;
+}
+
+
 
 .black{
   background: black;

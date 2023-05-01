@@ -1,23 +1,26 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
-import { useDispatch } from "react-redux";
 
 
 
 let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
 
-const darkSchemeSlice = createSlice({
-  name: 'darkScheme',
+const generalSlice = createSlice({
+  name: 'general',
   initialState: {
-    value: isDark
+    darkScheme: isDark,
+    lang: JSON.parse(localStorage.getItem('lang') || 'en')
   },
   reducers: {
-    changeValue: (state, action) => {
-      state.value = action.payload
+    changeScheme: (state, action) => {
+      state.darkScheme = action.payload
+    },
+    changeLang: (state, action) => {
+      state.lang = action.payload
     }
   }
 })
 
-export const {changeValue} = darkSchemeSlice.actions
+export const {changeScheme, changeLang} = generalSlice.actions
 
 
 
@@ -25,8 +28,13 @@ export const {changeValue} = darkSchemeSlice.actions
 
 export const store = configureStore({
   reducer: {
-    darkScheme: darkSchemeSlice.reducer
+    general: generalSlice.reducer
   }
 })
 
 
+store.subscribe(() => {
+  const state = store.getState()
+
+  localStorage.setItem('lang', JSON.stringify(state.general.lang))
+})

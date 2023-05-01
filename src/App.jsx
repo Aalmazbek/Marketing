@@ -4,19 +4,18 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
-import { changeValue } from './redux';
+import { changeScheme } from './redux';
 
 
 
 
 function App() {
-  const darkScheme = useSelector(state => state.darkScheme.value)
+  // const darkScheme = useSelector(state => state.general.darkScheme)
   const dispatch = useDispatch()
 
   window.matchMedia('(prefers-color-scheme: dark)')
   .addEventListener('change', (e) => {
-    console.log(e.matches);
-    dispatch(changeValue(e.matches))
+    dispatch(changeScheme(e.matches))
   })
 
 
