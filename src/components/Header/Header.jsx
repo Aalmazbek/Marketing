@@ -16,7 +16,8 @@ import burgerMenuIconDark from './assets/burgerMenuIcon-darkMode.svg'
 import crossIconLight from './assets/crossIcon-lightMode.svg'
 import crossIconDark from './assets/crossIcon-darkMode.svg'
 import Button from '../Button/Button'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { changeLang } from '../../redux'
 
 
 
@@ -25,25 +26,34 @@ import { useSelector } from 'react-redux'
 
 
 function Header() {
-  const darkScheme = useSelector(state => state.darkScheme.value)
+  const darkScheme = useSelector(state => state.general.darkScheme)
+  const dispatch = useDispatch()
+
 
   const { t, i18n } = useTranslation()
   
+  const lang = useSelector(state => state.general.lang)
+  const changeLanguage = (str) => {
+    setTimeout(() => {
+      i18n.changeLanguage(str)
+      dispatch(changeLang(str))
+    }, 200)
+  }
 
+
+  
+  
   const [isLangModal, setLangModal] = useState(false)
   const [isSelectModal, setSelectModal] = useState(false)
   const [isSearchModal, setSearchModal] = useState(false)
   const [isMobileSearchModal, setMobileSearchModal] = useState(false)
   const [isMobileMenuModal, setMobileMenuModal] = useState(false)
   const [isMobileSelect, setMobileSelect] = useState(false)
-
+  
   const toggleModal = (value, setValue) => {
     setValue(!value)
   }
 
-  const changeLanguage = (lang) => {
-    i18n.changeLanguage(lang)
-  }
 
 
   const [inputValue, setInputValue] = useState('')
@@ -116,21 +126,21 @@ function Header() {
       <div className={`container header__container`}>
         <nav className={`header__container-links`}>
           <img className={`header__logo`} src={darkScheme ? mainLogoDark : mainLogoLight} alt="ZONE logo" />
-          <a href="#">Home</a>
-          <a href="#">Components</a>
+          <a href="#">{t("header.home")}</a>
+          <a href="#">{t("header.components")}</a>
           <p className='header__select' onClick={() => toggleModal(isSelectModal, setSelectModal)}>
-            Pages 
+            {t("header.pages")} 
             <img src={darkScheme ? bottomArrowDark : bottomArrowLight} alt="bottom arrow" className={`${isSelectModal ? 'rotate180deg' : ''}`} />
           </p>
-          <a href="#">Documentation</a>
+          <a href="#">{t("header.documentation")}</a>
 
           <div className={`header__select-modal ${isSelectModal ? 'active' : ''}`}>
-            <Button elem="Home" mod='disabled'/>
-            <Button elem="Services"/>
-            <Button elem="Case Studies"/>
-            <Button elem="Blog"/>
-            <Button elem="About Us"/>
-            <Button elem="Contacts"/>
+            <Button elem={t("header.home")} mod='disabled'/>
+            <Button elem={t("header.select.services")}/>
+            <Button elem={t("header.select.case-studies")}/>
+            <Button elem={t("header.select.blog")}/>
+            <Button elem={t("header.select.about-us")}/>
+            <Button elem={t("header.select.contacts")}/>
           </div>
         </nav>
 
@@ -138,12 +148,12 @@ function Header() {
           <Button className={`search-button ${isSearchModal ? 'hide' : ''}`} elem={<img src={darkScheme ? searchIconDark : searchIconLight} alt='search icon' />} onClick={() => toggleModal(isSearchModal, setSearchModal)} />
           <Button className={`lang-button`} elem={<img src={darkScheme ? languageIconDark : languageIconLight} alt='language icon' />} onClick={() => toggleModal(isLangModal, setLangModal)} />
           <hr />
-          <Button elem="Login" />
-          <Button elem="Join Us" mod='black' />
+          <Button elem={t("header.login")} />
+          <Button elem={t("header.join-us")} mod='black' />
 
           <div className={`header__language-modal ${isLangModal ? 'active' : ''}`}>
-            <Button elem="RU"/>
-            <Button elem="EN" mod={`disabled`}/>
+            <Button elem="RU" mod={lang == 'ru' ? `disabled` : ''} onClick={() => changeLanguage('ru')} />
+            <Button elem="EN" mod={lang == 'en' ? `disabled` : ''} onClick={() => changeLanguage('en')} />
           </div>
 
           <form className={`header__search-modal ${isSearchModal ? 'search-active' : ''}`} onSubmit={handleSubmit}>
@@ -153,6 +163,10 @@ function Header() {
         </div>
       </div>
 
+
+
+
+      {/* Mobile */}
       <div className={`container header__container_mobile`}>
         <img className={`header__logo`} src={darkScheme ? mainLogoDark : mainLogoLight} alt="ZONE logo" />
 
@@ -168,32 +182,43 @@ function Header() {
         </div>
 
         <div className={`container mobile-header__menu-modal ${isMobileMenuModal ? 'mobile-header__menu-modal_active' : ''}`}>
-          <img className={`header__logo mobile-header__logo`} src={darkScheme ? mainLogoDark : mainLogoLight} alt="ZONE logo" />
+          <div className='container mobile-header__menu-modal-header'>
+            <img className={`header__logo mobile-header__logo`} src={darkScheme ? mainLogoDark : mainLogoLight} alt="ZONE logo" />
 
-          <Button className={`mobile-header__close-button`} elem={<img src={darkScheme ? crossIconDark : crossIconLight} alt="cross icon" />} onClick={() => setMobileMenuModal(false)} />
+            <div>
+              <Button className={`lang-button mobile-header__lang-button`} elem={<img src={darkScheme ? languageIconDark : languageIconLight} alt='language icon' />} onClick={() => toggleModal(isLangModal, setLangModal)} />
+              <Button className={`mobile-header__close-button`} elem={<img src={darkScheme ? crossIconDark : crossIconLight} alt="cross icon" />} onClick={() => setMobileMenuModal(false)} />
+            </div>
+
+            <div className={`header__language-modal mobile-header__language-modal ${isLangModal ? 'active' : ''}`}>
+              <Button elem="RU" mod={lang == 'ru' ? `disabled` : ''} onClick={() => changeLanguage('ru')} />
+              <Button elem="EN" mod={lang == 'en' ? `disabled` : ''} onClick={() => changeLanguage('en')} />
+            </div>
+          </div>
+          
 
           <nav className={`mobile-header__links`}>
-            <Button elem={'Home'}/>
-            <Button elem={'Components'}/>
+            <Button elem={t("header.home")}/>
+            <Button elem={t("header.components")}/>
             <Button 
               className={`header__select-button`}
               elem={
                 <p className='header__select' >
-                  Pages 
+                  {t("header.pages")} 
                   <img src={darkScheme ? bottomArrowDark : bottomArrowLight} alt="bottom arrow" className={`${isMobileSelect ? 'rotate180deg' : ''}`} />
                 </p>
               } 
               onClick={() => toggleModal(isMobileSelect, setMobileSelect)}
             />
             <div className={`mobile-header__select-container ${isMobileSelect ? 'mobile-header__select-container_active' : ''}`}>
-              <Button elem="Home" mod='disabled'/>
-              <Button elem="Services"/>
-              <Button elem="Case Studies"/>
-              <Button elem="Blog"/>
-              <Button elem="About Us"/>
-              <Button elem="Contacts"/>
+              <Button elem={t("header.home")} mod='disabled'/>
+              <Button elem={t("header.select.services")}/>
+              <Button elem={t("header.select.case-studies")}/>
+              <Button elem={t("header.select.blog")}/>
+              <Button elem={t("header.select.about-us")}/>
+              <Button elem={t("header.select.contacts")}/>
             </div>
-            <Button elem={'Documentation'}/>
+            <Button elem={t("header.documentation")}/>
           </nav>
         </div>
       </div>

@@ -1,0 +1,31 @@
+{
+  "header": {
+    "home": "Home",
+    "components": "Components",
+    "pages": "Pages",
+    "documentation": "Documentation",
+    "login": "Login",
+    "join-us": "Join Us",
+    "select": {
+      "services": "Services",
+      "case-studies": "Case Studies",
+      "blog": "Blog",
+      "about-us": "About Us",
+      "contacts": "Contacts"
+    }
+  },
+  "newsletter": {
+    "title": "Sign Up For Newsletter",
+    "description": "Receive 50% discount on first project",
+    "input-placeholder": "Enter your email",
+    "button": "Sign Up"
+  },
+  "footer": {
+    "text": "The starting point for your next project based on easy-to-customize Material-UI © helps you build apps faster and better.",
+    "address": "655 Schaefer Dale",
+    "input-placeholder": "Email address",
+    "copyright": "© 2021. All rights reserved",
+    "help-center": "Help Center",
+    "terms-of-service": "Terms of Service"
+  }
+}
