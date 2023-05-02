@@ -21,6 +21,22 @@
     "website-placeholder": "Website URL",
     "button-text": "Analyse"
   },
+  "LatestPosts": {
+    "title": "Latest Posts",
+    "data1": "15 Dec 2020 • 8 min read",
+    "data2": "4 Jul 2021 • 8 min read",
+    "data3": "19 Apr 2019 • 8 min read"
+  },
+  "getFreeSEOAnalysis": {
+    "title-part1": "Get Free",
+    "title-part2": "SEO Analysis",
+    "address": "508 Bridle Avenue Newnan, GA 30263",
+    "name-placeholder": "Name",
+    "email-placeholder": "Email",
+    "phone-placeholder": "Phone",
+    "website-placeholder": "Website URL",
+    "button-text": "Send Request"
+  },
   "newsletter": {
     "title": "Sign Up For Newsletter",
     "description": "Receive 50% discount on first project",

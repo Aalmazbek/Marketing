@@ -21,6 +21,22 @@
     "website-placeholder": "URL веб-сайта",
     "button-text": "Анализировать"
   },
+  "LatestPosts": {
+    "title": "Последние посты",
+    "data1": "15 Дек 2020 • 8 мин чтения",
+    "data2": "4 Июля 2021 • 8 мин чтения",
+    "data3": "19 Апр 2019 • 8 мин чтения"
+  },
+  "getFreeSEOAnalysis": {
+    "title-part1": "Получите бесплатный",
+    "title-part2": "SEO-анализ",
+    "address": "508 Бридл-авеню Ньюнан, Джорджия 30263",
+    "name-placeholder": "Имя",
+    "email-placeholder": "Электронная почта",
+    "phone-placeholder": "Номер телефона",
+    "website-placeholder": "URL веб-сайта",
+    "button-text": "Отправить запрос"
+  },
   "newsletter": {
     "title": "Подпишитесь на новостную рассылку",
     "description": "Получите 50% скидку на первый проект",
