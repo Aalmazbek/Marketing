@@ -1,10 +1,18 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
+
 import './App.css';
 import Footer from './components/Footer/Footer';
+import GetFreeSEOAnalysis from './components/GetFreeSEOAnalysis/GetFreeSEOAnalysis';
 import Header from './components/Header/Header';
-import OfflineSEOAnalyse from './components/OfflineSEOAnalyse/OfflineSEOAnalyse';
+import AboutPage from './pages/AboutPage/AboutPage';
+import BlogDetailsPage from './pages/BlogDetailsPage/BlogDetailsPage';
+import BlogPage from './pages/BlogPage/BlogPage';
+import CaseStudiesDetailsPage from './pages/CaseStudiesDetailsPage/CaseStudiesDetailsPage';
+import CaseStudiesPage from './pages/CaseStudiesPage/CaseStudiesPage';
+import ContactPage from './pages/ContactPage/ContactPage';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import ServicesPage from './pages/ServicesPage/ServicesPage';
 import { changeScheme } from './redux';
 
 
@@ -24,7 +32,21 @@ function App() {
     <div className="App">
       <Header />
 
-      <OfflineSEOAnalyse />
+      <main>
+        <Routes>
+          <Route path='/services' element={<ServicesPage />} />
+          <Route path='/case-studies-list' element={<CaseStudiesPage />} />
+          <Route path='/case-studies-details' element={<CaseStudiesDetailsPage />} />
+          <Route path='/blog' element={<BlogPage />} />
+          <Route path='/blog-details' element={<BlogDetailsPage />} />
+          <Route path='/about' element={<AboutPage />} />
+          <Route path='/contact' element={<ContactPage />} />
+          <Route path='*' element={<NotFoundPage />} />
+        </Routes>
+
+        <GetFreeSEOAnalysis />
+      </main>
+
       <Footer />
     </div>
   );

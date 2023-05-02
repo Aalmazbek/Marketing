@@ -72,10 +72,10 @@ header{
 }
 
 
-.header__select-modal button{
+.header__select-modal a, .header__select-modal button{
+  width: 100%;
   border-radius: 0;
 }
-
 
 
 .rotate180deg{

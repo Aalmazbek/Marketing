@@ -259,6 +259,11 @@ footer{
 
 
 @media screen and (max-width: 1023px){
+  footer{
+    overflow: hidden;
+  }
+
+
   .footer__newsletter-container{
     flex-direction: column;
     gap: 40px;

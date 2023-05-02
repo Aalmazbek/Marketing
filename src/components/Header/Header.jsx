@@ -18,6 +18,7 @@ import crossIconDark from './assets/crossIcon-darkMode.svg'
 import Button from '../Button/Button'
 import { useDispatch, useSelector } from 'react-redux'
 import { changeLang } from '../../redux'
+import { Link, useLocation } from 'react-router-dom'
 
 
 
@@ -39,6 +40,9 @@ function Header() {
       dispatch(changeLang(str))
     }, 200)
   }
+
+
+  const location = useLocation()
 
 
   
@@ -125,8 +129,10 @@ function Header() {
     <header ref={header}>
       <div className={`container header__container`}>
         <nav className={`header__container-links`}>
-          <img className={`header__logo`} src={darkScheme ? mainLogoDark : mainLogoLight} alt="ZONE logo" />
-          <a href="#">{t("header.home")}</a>
+          <Link to='/'>
+            <img className={`header__logo`} src={darkScheme ? mainLogoDark : mainLogoLight} alt="ZONE logo" />
+          </Link>
+          <Link to='/'>{t("header.home")}</Link>
           <a href="#">{t("header.components")}</a>
           <p className='header__select' onClick={() => toggleModal(isSelectModal, setSelectModal)}>
             {t("header.pages")} 
@@ -135,12 +141,24 @@ function Header() {
           <a href="#">{t("header.documentation")}</a>
 
           <div className={`header__select-modal ${isSelectModal ? 'active' : ''}`}>
-            <Button elem={t("header.home")} mod='disabled'/>
-            <Button elem={t("header.select.services")}/>
-            <Button elem={t("header.select.case-studies")}/>
-            <Button elem={t("header.select.blog")}/>
-            <Button elem={t("header.select.about-us")}/>
-            <Button elem={t("header.select.contacts")}/>
+            <Link to='/' className={location.pathname === '/' ? 'link-disabled' : ''}>
+              <Button elem={t("header.home")} mod={location.pathname === '/' ? 'disabled' : ''} />
+            </Link>
+            <Link to='/services' className={location.pathname === '/services' ? 'link-disabled' : ''}>
+              <Button elem={t("header.select.services")} mod={location.pathname === '/services' ? 'disabled' : ''} />
+            </Link>
+            <Link to='/case-studies-list' className={location.pathname === '/case-studies-list' ? 'link-disabled' : ''}>
+              <Button elem={t("header.select.case-studies")} mod={location.pathname === '/case-studies-list' ? 'disabled' : ''} />
+            </Link>
+            <Link to='/blog' className={location.pathname === '/blog' ? 'link-disabled' : ''}>
+              <Button elem={t("header.select.blog")} mod={location.pathname === '/blog' ? 'disabled' : ''} />
+            </Link>
+            <Link to='/about' className={location.pathname === '/about' ? 'link-disabled' : ''}>
+              <Button elem={t("header.select.about-us")} mod={location.pathname === '/about' ? 'disabled' : ''} />
+            </Link>
+            <Link to='/contact' className={location.pathname === '/contact' ? 'link-disabled' : ''}>
+              <Button elem={t("header.select.contacts")} mod={location.pathname === '/contact' ? 'disabled' : ''} />
+            </Link>
           </div>
         </nav>
 
