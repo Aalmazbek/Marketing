@@ -1,10 +1,12 @@
 import React from 'react'
+import LatestPosts from '../../components/LatestPosts/LatestPosts'
 
 function BlogDetailsPage() {
   return (
-    <main>
+    <>
 
-    </main>
+      <LatestPosts />
+    </>
   )
 }
 

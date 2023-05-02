@@ -1,10 +1,12 @@
 import React from 'react'
+import LatestPosts from '../../components/LatestPosts/LatestPosts'
 
 function CaseStudiesPage() {
   return (
-    <main>
+    <>
 
-    </main>
+      <LatestPosts />
+    </>
   )
 }
 

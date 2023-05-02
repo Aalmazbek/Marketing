@@ -23,9 +23,10 @@
   },
   "LatestPosts": {
     "title": "Latest Posts",
-    "data1": "15 Dec 2020 • 8 min read",
-    "data2": "4 Jul 2021 • 8 min read",
-    "data3": "19 Apr 2019 • 8 min read"
+    "Dec": "Dec",
+    "Jul": "Jul",
+    "Apr": "Apr",
+    "read-mins": "min read"
   },
   "getFreeSEOAnalysis": {
     "title-part1": "Get Free",
