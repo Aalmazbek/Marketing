@@ -198,7 +198,7 @@ hr{
 
 .header__language-modal{
   top: 110%;
-  left: 32%;
+  left: 35%;
 }
 
 
@@ -511,7 +511,16 @@ hr{
   box-shadow: 0 0 15px 0px rgba(255, 255, 255, 0.1);
 }
 
-.header-dark .header__language-modal{
+.header-dark .header__language-modal button{
+  color: white;
+}
+
+.header-dark .header__language-modal button:hover{
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.header-dark .header__language-modal button:active{
+  background: rgba(22, 28, 36, 1);
 }
 
 

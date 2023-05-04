@@ -114,7 +114,7 @@
 
 .disabled{
   background: rgba(145, 158, 171, 0.24);
-  color: rgba(145, 158, 171, 0.5);
+  color: rgba(145, 158, 171, 0.5)!important;
 
   pointer-events: none;
 }
