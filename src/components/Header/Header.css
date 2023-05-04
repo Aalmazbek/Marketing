@@ -123,9 +123,8 @@ header{
   opacity: 0;
   display: flex;
   align-items: center;
-  gap: 2px;
   position: absolute;
-  right: 85%;
+  right: 70%;
   top: 10%;
   
   border: 1px solid black;
@@ -136,7 +135,7 @@ header{
 
 
 .search-active{
-  width: 195px;
+  width: 190px;
 
   opacity: 1;
 }
@@ -161,6 +160,10 @@ header{
   min-width: 40px;
   
   padding: 5px;
+
+  background: white;
+
+  border-radius: 0!important;
 }
 
 
@@ -299,6 +302,7 @@ hr{
 
 
 .mobile-header__menu-modal-header{
+  min-height: 80px;
   height: 80px;
 
   display: flex;
@@ -317,13 +321,15 @@ hr{
 
 
 .mobile-header__menu-modal-header > div > button{
-  padding-top: 14px;
+  padding-top: 10px;
 }
 
 
 .mobile-header__lang-button img{
   width: 24px;
   height: 24px;
+
+  filter: none!important;
 }
 
 
@@ -338,12 +344,15 @@ hr{
 
 .mobile-header__language-modal{
   /* width: fit-content; */
+  background: white!important;
 
   gap: 0px!important;
 
   top: 90%;
   left: 65%;
   z-index: 110;
+
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2)!important;
 }
 
 
@@ -385,7 +394,6 @@ hr{
 
 
 
-
 .mobile-header__select-container{
   width: 100%;
   max-height: 0px;
@@ -403,6 +411,17 @@ hr{
 }
 
 
+.mobile-header__select-container a{
+  width: 100%;
+}
+
+
+
+.mobile-header__select-container a:first-of-type{
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
 .mobile-header__select-container button{
   width: 100%;
 
@@ -413,9 +432,174 @@ hr{
 
 
 
-.mobile-header__select-container button:first-of-type{
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header-dark.is-pinned{
+  background-color: rgba(22, 28, 36, 1)!important;
 }
+
+
+
+.header-dark .header__container-links a, .header-dark .header__container-links p{
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+
+.header-dark .header__container-links p img{
+  filter: contrast(0) brightness(200%);
+}
+
+.header-dark .header__container-links *:hover{
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+
+.header-dark .search-button, .header-dark .lang-button, .header-dark .login-button{
+  color: white;
+}
+
+.header-dark .search-button:hover, .header-dark .lang-button:hover, .header-dark .login-button:hover{
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.header-dark .search-button:active, .header-dark .lang-button:active, .header-dark .login-button:active{
+  background: none;
+}
+
+
+.header-dark .search-button img, .header-dark .lang-button img{
+  filter: contrast(0) brightness(200%);
+}
+
+
+
+.header-dark .header__search-modal{
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.header-dark .header__search-modal input{
+  background: rgba(22, 28, 36, 1);
+
+  border-radius: 5px 0 0 5px;
+  border-right-color: rgba(255, 255, 255, 0.1);
+  outline-color: white;
+}
+
+
+
+
+.header-dark .header__language-modal, .header-dark .header__select-modal{
+  background: rgba(22, 28, 36, 1);
+  box-shadow: 0 0 15px 0px rgba(255, 255, 255, 0.1);
+}
+
+.header-dark .header__language-modal{
+}
+
+
+
+
+.header-dark .join-button{
+  background: white;
+
+  color: black;
+}
+
+.header-dark .join-button:hover{
+  background: rgb(192, 192, 192);
+}
+
+.header-dark .join-button:active{
+  background: rgb(255, 255, 255);
+}
+
+
+
+.header-dark .header__select-modal *{
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+.header-dark .burger-menu-button_mobile img, .header-dark .search-button_mobile img{
+  filter: contrast(0) brightness(200%);
+}
+
+
+
+
+.mobile-header__menu-modal-dark{
+  background: rgba(22, 28, 36, 1);
+}
+
+
+.mobile-header__menu-modal-dark .mobile-header__lang-button img, .mobile-header__menu-modal-dark .mobile-header__close-button img{
+  filter: contrast(0) brightness(200%)!important;
+}
+
+
+
+.mobile-header__menu-modal-dark .mobile-header__language-modal{
+  background: rgba(22, 28, 36, 1)!important;
+
+  box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.1)!important;
+}
+
+
+
+
+.mobile-header__menu-modal-dark .mobile-header__links > button{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobile-header__menu-modal-dark .mobile-header__links > button:active{
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+
+.mobile-header__menu-modal-dark .mobile-header__select-container{
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.mobile-header__menu-modal-dark .mobile-header__select-container button:first-of-type{
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.mobile-header__menu-modal-dark .mobile-header__select-container button:active{
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+
+
+
 
 
 

@@ -39,6 +39,12 @@ input{
   padding: 0 15px;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .input-darkScheme{  
   background-color: rgba(255, 255, 255, 0.1);
 
@@ -50,6 +56,7 @@ input{
 .input-darkScheme::placeholder{
   color: rgba(145, 158, 171, 1);
 }
+
 
 
 
@@ -107,23 +114,21 @@ input{
 
 
 
-@media (prefers-color-scheme: dark) {
-  .App{
-    background: rgba(22, 28, 36, 1)!important;
-  }
+.App-dark{
+  background: rgba(22, 28, 36, 1)!important;
+}
 
 
-  .App *{
-    color: white;
-  }
+.App-dark *{
+  color: white;
+}
 
 
-  input{
-    outline-width: 1px;
-    outline-color: rgba(255, 255, 255, 0.5);
-  }
+.App-dark input{
+  outline-width: 1px;
+  outline-color: rgba(255, 255, 255, 0.5);
+}
 
-  input::placeholder{
-    color: rgba(145, 158, 171, 1);
-  }
+.App-dark input::placeholder{
+  color: rgba(145, 158, 171, 1);
 }

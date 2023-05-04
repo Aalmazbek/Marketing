@@ -15,7 +15,6 @@ import twitterIcon from './assets/twitterIcon-lightMode.svg'
 import letterIcon from './assets/letterIcon-lightMode.svg'
 import geopositionIcon from './assets/geopositionIcon-lightMode.svg'
 import arrowIcon from './assets/arrow-darkMode.svg'
-import { changeLang } from '../../redux'
 
 
 function Footer() {
@@ -37,7 +36,7 @@ function Footer() {
   }
 
   return (
-    <footer>
+    <footer className={darkScheme ? 'footer-dark' : ''}>
       <article className={`footer__newsletter`}>
         <div className='container footer__newsletter-container'>
           <section className={`footer__newsletter-title`}>

@@ -1,10 +1,11 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 
 import './App.css';
 import Footer from './components/Footer/Footer';
 import GetFreeSEOAnalysis from './components/GetFreeSEOAnalysis/GetFreeSEOAnalysis';
 import Header from './components/Header/Header';
+import Testimonials from './components/Testimonials/Testimonials';
 import AboutPage from './pages/AboutPage/AboutPage';
 import BlogDetailsPage from './pages/BlogDetailsPage/BlogDetailsPage';
 import BlogPage from './pages/BlogPage/BlogPage';
@@ -19,17 +20,14 @@ import { changeScheme } from './redux';
 
 
 function App() {
-  // const darkScheme = useSelector(state => state.general.darkScheme)
+  const darkScheme = useSelector(state => state.general.darkScheme)
   const dispatch = useDispatch()
 
-  window.matchMedia('(prefers-color-scheme: dark)')
-  .addEventListener('change', (e) => {
-    dispatch(changeScheme(e.matches))
-  })
+  
 
 
   return (
-    <div className="App">
+    <div className={`App ${darkScheme ? 'App-dark' : ''}`}>
       <Header />
 
       <main>

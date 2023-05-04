@@ -2,18 +2,17 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 
 
-let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-const lang = JSON.parse(localStorage.getItem('lang')) || 'en'
+// let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
 
 const generalSlice = createSlice({
   name: 'general',
   initialState: {
-    darkScheme: isDark,
-    lang: lang
+    darkScheme: JSON.parse(localStorage.getItem('darkScheme')) || false,
+    lang: JSON.parse(localStorage.getItem('lang')) || 'en'
   },
   reducers: {
     changeScheme: (state, action) => {
-      state.darkScheme = action.payload
+      state.darkScheme = !state.darkScheme
     },
     changeLang: (state, action) => {
       state.lang = action.payload
@@ -37,5 +36,6 @@ export const store = configureStore({
 store.subscribe(() => {
   const state = store.getState()
 
+  localStorage.setItem('darkScheme', JSON.stringify(state.general.darkScheme))
   localStorage.setItem('lang', JSON.stringify(state.general.lang))
 })

@@ -11,7 +11,7 @@
       "case-studies": "Case Studies",
       "blog": "Blog",
       "about-us": "About Us",
-      "contacts": "Contacts"
+      "contact": "Contacts"
     }
   },
   "offlineSEOAnalyse": {
@@ -27,6 +27,11 @@
     "Jul": "Jul",
     "Apr": "Apr",
     "read-mins": "min read"
+  },
+  "Testimonials": {
+    "title1": "Testimonials",
+    "title2": "Who Love Our Work",
+    "designer": "Designer"
   },
   "getFreeSEOAnalysis": {
     "title-part1": "Get Free",

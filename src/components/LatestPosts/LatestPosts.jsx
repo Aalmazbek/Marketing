@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react'
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
+import React from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Navigation, Autoplay } from 'swiper';
 
 import 'swiper/css';
@@ -11,6 +11,7 @@ import leftArrow from './assets/leftArrow.svg'
 import rightArrow from './assets/rightArrow.svg'
 import { useTranslation } from 'react-i18next';
 import { t } from 'i18next';
+import { useSelector } from 'react-redux';
 
 
 
@@ -47,28 +48,17 @@ const postsArray = [
   }
 ]
 
-
-// const getMoth = (num) => {
-//   const months = [
-//     'Jan',
-//     'Jan',
-//     'Feb',
-//     '',
-//     'Jan',
-//     'Jan',
-//     'Jan',
-//     'Jan',
-//   ]
-// }
-
+let amount = [...postsArray, ...postsArray, ...postsArray]
 
 function LatestPosts() {
+
+  const darkScheme = useSelector(state => state.general.darkScheme)
 
   const { t } = useTranslation()
 
 
   return (
-    <article className='LatestPosts'>
+    <article className={`LatestPosts ${darkScheme ? 'LatestPosts-dark' : ''}`}>
       <div className="container">
         <h1>{t('LatestPosts.title')}</h1>
       </div>
@@ -109,11 +99,11 @@ function LatestPosts() {
             }}
             modules={[Pagination, Navigation, Autoplay]}
           >
-            {[1,1,1,1,1,1].map(item => postsArray.map(elem => 
-              <SwiperSlide className={`LatestPosts__swiper-slide ${elem.background ? 'swiper-slide-background-image' : ''}`}>
+            {amount.map((elem, index) => 
+              <SwiperSlide key={index + elem.day} className={`LatestPosts__swiper-slide ${elem.background ? 'swiper-slide-background-image' : ''}`}>
                 <div className='swiper-slide-background'></div>
                 <div className='swiper-slide-header'>
-                  <div>{elem.day} {t('LatestPosts.'+elem.month)} {elem.year} • {elem.min} {t('LatestPosts.read-mins')}</div>
+                  <p>{elem.day} {t('LatestPosts.'+elem.month)} {elem.year} • {elem.min} {t('LatestPosts.read-mins')}</p>
 
                   <h3>{elem.title}</h3>
                 </div>
@@ -123,13 +113,7 @@ function LatestPosts() {
                   <p>{elem.user}</p>
                 </div>
               </SwiperSlide>
-            ))}
-            {/* // <SwiperSlide className='LatestPosts__swiper-slide'>slide1</SwiperSlide>
-            // <SwiperSlide className='LatestPosts__swiper-slide slide-background'>slide2</SwiperSlide>
-            // <SwiperSlide className='LatestPosts__swiper-slide'>slide3</SwiperSlide>
-            // <SwiperSlide className='LatestPosts__swiper-slide'>slide4</SwiperSlide>
-            // <SwiperSlide className='LatestPosts__swiper-slide slide-background'>slide5</SwiperSlide>
-            // <SwiperSlide className='LatestPosts__swiper-slide'>slide6</SwiperSlide> */}
+            )}
           </Swiper>
 
           <button className="swiper-button-prev-unique">
