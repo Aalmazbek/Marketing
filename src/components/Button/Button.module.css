@@ -36,6 +36,28 @@
 
 
 
+.darkMode{
+  color: white;
+}
+
+.darkMode:hover{
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.darkMode:active{
+  background: none;
+}
+
+
+.darkMode-disabled{
+  pointer-events: none;
+
+  color: rgba(255, 255, 255, 0.5)!important;
+}
+
+
+
+
 .black{
   background: black;
 
@@ -50,6 +72,24 @@
 
 .black:active{
   background: black;
+}
+
+
+
+.white{
+  background: white;
+
+  border: 1px solid rgba(0, 0, 0, 0);
+
+  color: black;
+}
+
+.white:hover{
+  background: rgb(176, 176, 176);
+}
+
+.white:active{
+  background: rgb(255, 255, 255);
 }
 
 

@@ -68,7 +68,7 @@
 
 
 
-.swiper-slide-active .swiper-slide-header div{
+.swiper-slide-active .swiper-slide-header p{
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -109,7 +109,7 @@
 }
 
 
-.swiper-slide-header div{
+.swiper-slide-header p{
   color: rgba(0, 0, 0, 0.7);
 }
 
@@ -198,6 +198,59 @@
 
 
 
+
+
+
+.LatestPosts-dark .LatestPosts__swiper-slide{
+  background: rgba(33, 43, 54, 1);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+
+.LatestPosts-dark .swiper-slide-background{
+  background: linear-gradient(180deg, #00000086 20%, rgba(255, 255, 255, 0) 100%);
+}
+
+
+
+.LatestPosts-dark .swiper-slide-header p{
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.LatestPosts-dark .swiper-slide-active .swiper-slide-header p{
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+
+.LatestPosts-dark .swiper-pagination-bullet{
+  background: white;
+}
+
+
+
+.LatestPosts-dark .swiper-pagination-bullet-active{
+  background: var(--main-orange);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1100px){
   .swiper-slide-header div{
     font-size: 12px;
@@ -241,15 +294,50 @@
 
   .LatestPosts__swiper-slide{
     min-height: 350px;
-    height: 30vh;
+    height: 40vh;
     max-height: 450px;
   }
+
+
+  .swiper-slide-header h3{
+    font-weight: 500;
+  }
+
 
 
 
   .swiper-button-prev-unique, .swiper-button-next-unique {
     display: none;
   }
+}
+
+
+
+
+
+@media screen and (max-width: 576px){
+  .LatestPosts h1{
+    text-align: center;
+  }
+
+
+
+  .LatestPosts__container{
+    padding-top: 20px;
+  }
+
+
+  .LatestPosts__swiper-slide{
+    min-height: 350px;
+    height: 70vh;
+    max-height: 500px;
+  }
+
+
+  .swiper-slide-header h3{
+    line-height: 35px;
+  }
+
 }
 
 

@@ -6,7 +6,7 @@
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) -1.23%, #000000 80%), url('./assets/background.png');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center 40%;
 
   text-align: center;
 }

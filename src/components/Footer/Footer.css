@@ -256,6 +256,47 @@ footer{
 
 
 
+.footer-dark .footer__newsletter{
+  background: rgba(145, 158, 171, 0.12);
+}
+
+
+.footer-dark .footer__newsletter-title p{
+  color: rgba(145, 158, 171, 1);
+}
+
+
+
+
+.footer-dark .footer__title p{
+  color: rgba(145, 158, 171, 1);
+}
+
+
+
+.footer-dark .footer__title-socials img, .footer__contacts{
+  filter: contrast(0) brightness(200%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media screen and (max-width: 1023px){
