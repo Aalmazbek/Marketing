@@ -302,7 +302,9 @@ function Header() {
 
           <form className={`header__search-modal ${isSearchModal ? 'search-active' : ''}`} onSubmit={handleSubmit}>
             <input type="text" className={`header__search-input`} value={inputValue} onChange={e => setInputValue(e.target.value)} />
-            <input type="image" className={`header__search-submit`} src={darkScheme ? searchIconDark : searchIconLight} alt="search icon" name='submit' />
+            <button className={`header__search-submit`}>
+              <img src={searchIconLight} alt="search-icon" />
+            </button>
           </form>
         </div>
       </div>

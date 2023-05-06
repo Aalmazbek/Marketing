@@ -157,13 +157,14 @@ footer{
   display: flex;
   flex-direction: column;
   gap: 30px;
+
 }
 
 .footer__contacts address{
   display: flex;
   align-items: center;
   gap: 10px;
-
+  
   font-style: normal;
   white-space: nowrap;
 }
@@ -274,9 +275,16 @@ footer{
 
 
 
-.footer-dark .footer__title-socials img, .footer__contacts{
+.footer-dark .footer__contacts{
+  color: white;
+}
+
+
+.footer-dark .footer__title-socials img, .footer-dark .footer__contacts img{
   filter: contrast(0) brightness(200%);
 }
+
+
 
 
 
@@ -443,38 +451,5 @@ footer{
 
   .footer__form-section form button img{
     height: 100%;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-@media (prefers-color-scheme: dark) {
-  .footer__newsletter{
-    background: rgba(145, 158, 171, 0.12);
-  }
-
-
-  .footer__newsletter-title p{
-    color: rgba(145, 158, 171, 1);
-  }
-
-
-
-  
-  .footer__title p{
-    color: rgba(145, 158, 171, 1);
-  }
-
-
-
-  .footer__title-socials img, .footer__contacts{
-    filter: contrast(0) brightness(200%);
   }
 }
