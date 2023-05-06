@@ -56,5 +56,64 @@
     "copyright": "© 2021. All rights reserved",
     "help-center": "Help Center",
     "terms-of-service": "Terms of Service"
+  },
+  "ServicesPage": {
+    "main-1": {
+      "title": "Offline SEO",
+      "description": "Nunc nonummy metus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Nunc nonummy metus. Donec elit libero, sodales nec",
+      "advantage-1": "First Class Flights",
+      "advantage-2": "5 Star Accommodations",
+      "advantage-3": "Inclusive Packages",
+      "advantage-4": "Latest Model Vehicles",
+      "button": "Chek Our Work"
+    }, 
+    "main-2": {
+      "title": "Services Include",
+      "description": "Nunc nonummy metus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis.",
+      "card-1": "Search Engine Optimization",
+      "card-2": "Social Media Strategy",
+      "card-3": "Real Time and Data",
+      "card-4": "Online Media Management",
+      "card-5": "Reporting & Analysis",
+      "card-6": "Penalty Recovery",
+      "card-description": "Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi."
+    }, 
+    "main-3": {
+      "title": "Benefits Achieved",
+      "description": "Nunc nonummy metus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis.",
+      "card-1": {
+        "title": "Search Engine Optimization",
+        "description": "Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi."
+      },
+      "card-2": {
+        "title": "Social Media Strategy",
+        "description": "Suspendisse enim turpis, dictum sed."
+      },
+      "card-3": {
+        "title": "Real Time and Data",
+        "description": "Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi."
+      },
+      "card-4": {
+        "title": "Online Media Management",
+        "description": "Suspendisse enim turpis, dictum sed."
+      },
+      "card-5": {
+        "title": "Reporting & Analysis",
+        "description": "Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi."
+      },
+      "card-6": {
+        "title": "Penalty Recovery",
+        "description": "Suspendisse enim turpis, dictum sed."
+      }
+    },
+    "main-4": {
+      "title": "How it Works",
+      "description": "Nunc nonummy metus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis.",
+      "card-1": "Planning",
+      "card-2": "Research",
+      "card-3": "Optimizing",
+      "card-4": "Results",
+      "card-description": "Curabitur ullamcorper ultricies nisi. Praesent nonummy mi in odio. Donec mollis hendrerit risus."
+    }
   }
 }

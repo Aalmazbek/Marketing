@@ -12,6 +12,8 @@ header{
 
 .is-pinned{
   background-color: white;
+
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
 }
 
 
@@ -116,6 +118,12 @@ header{
 
 
 
+.search-wrapper{
+  position: relative;
+}
+
+
+
 .header__search-modal{
   width: 0px;
   height: 80%;
@@ -124,7 +132,7 @@ header{
   display: flex;
   align-items: center;
   position: absolute;
-  right: 64%;
+  right: 0;
   top: 10%;
   
   border: 1px solid black;
@@ -195,6 +203,12 @@ hr{
 
 
 
+.lang-wrapper{
+  position: relative;
+}
+
+
+
 .header__language-modal, .header__select-modal{
   display: flex;
   flex-direction: column;
@@ -214,7 +228,7 @@ hr{
 
 .header__language-modal{
   top: 110%;
-  left: 35%;
+  left: 0%;
 }
 
 
@@ -274,21 +288,32 @@ hr{
 
 .header__search-modal-mobile{
   width: 0;
+  max-width: 220px;
+
   right: 0;
+}
+
+
+.header__search-modal-mobile input{
+  width: 100%;
 }
 
 
 
 
 .search-modal-mobile_active{
-  width: 190px;
+  width: 90vw;
+
   /* background: black; */
   opacity: 1;
 }
 
 
 .header__search-submit-mobile{
-  padding: 3px 6px 5px 2px;
+  max-width: none;
+  max-height: none;
+
+  padding: 10px 15px;
 }
 
 
@@ -473,6 +498,8 @@ hr{
 
 .header-dark.is-pinned{
   background-color: rgba(22, 28, 36, 1)!important;
+
+  box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -599,10 +626,9 @@ hr{
 
 
 
-.header-dark .burger-menu-button_mobile img, .header-dark .search-button_mobile img{
+.header-dark .burger-menu-button_mobile img, .header-dark .search-button_mobile img, .header-dark .header__search-submit-mobile img{
   filter: contrast(0) brightness(200%);
 }
-
 
 
 

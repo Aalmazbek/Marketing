@@ -4,10 +4,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   
   background: none;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   
   transition: 0.2s;
   cursor: pointer;
@@ -112,6 +113,28 @@
 
 
 
+
+
+.outlined-black{
+  border: 1px solid rgba(145, 158, 171, 0.32);
+  color: black;
+}
+
+.outlined-black:hover{
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+
+.outlined-black:active{
+  transition: 0s;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+
+
+
+
+
 .disabled{
   background: rgba(145, 158, 171, 0.24);
   color: rgba(145, 158, 171, 0.5)!important;
@@ -212,6 +235,14 @@
 
   .orange:active{
     background: rgba(179, 32, 14, 1);
+  }
+
+
+
+
+
+  .outlined-black:hover{
+    border: 1px solid rgba(145, 158, 171, 0.32);
   }
 
 
