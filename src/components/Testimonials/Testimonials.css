@@ -189,6 +189,11 @@
 
 
 @media screen and (max-width: 1023px){
+  .Testimonials__container{
+    padding: 64px 0;
+  }
+
+
   .Testimonials__title h1{
     font-size: 32px;
   }

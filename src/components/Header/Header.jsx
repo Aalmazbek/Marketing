@@ -281,31 +281,38 @@ function Header() {
           <FormControlLabel
           control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked={darkScheme} onChange={() => dispatch(changeScheme())} inputProps={{ 'aria-label': 'controlled' }} />}
           />
-          <Button 
-            className={`search-button ${isSearchModal ? 'hide' : ''}`} 
-            elem={<img src={searchIconLight} alt='search icon' />} 
-            onClick={() => toggleModal(isSearchModal, setSearchModal)} 
-          />
-          <Button 
-            className={`lang-button`} 
-            elem={<img src={languageIconLight} alt='language icon' />} 
-            onClick={() => toggleModal(isLangModal, setLangModal)} 
-          />
+
+          <div className='search-wrapper'>
+            <Button 
+              className={`search-button ${isSearchModal ? 'hide' : ''}`} 
+              elem={<img src={searchIconLight} alt='search icon' />} 
+              onClick={() => toggleModal(isSearchModal, setSearchModal)} 
+            />
+
+            <form className={`header__search-modal ${isSearchModal ? 'search-active' : ''}`} onSubmit={handleSubmit}>
+              <input type="text" className={`header__search-input`} value={inputValue} onChange={e => setInputValue(e.target.value)} />
+              <button className={`header__search-submit`}>
+                <img src={searchIconLight} alt="search-icon" />
+              </button>
+            </form>
+          </div>
+
+          <div className="lang-wrapper">
+            <Button 
+              className={`lang-button`} 
+              elem={<img src={languageIconLight} alt='language icon' />} 
+              onClick={() => toggleModal(isLangModal, setLangModal)} 
+            />
+
+            <div className={`header__language-modal ${isLangModal ? 'active' : ''}`}>
+              <Button elem="EN" mod={lang == 'en' ? `disabled` : ''} onClick={() => changeLanguage('en')} />
+              <Button elem="RU" mod={lang == 'ru' ? `disabled` : ''} onClick={() => changeLanguage('ru')} />
+            </div>
+          </div>
+
           <hr />
           <Button className='login-button' elem={t("header.login")} />
           <Button className={`join-button`} elem={t("header.join-us")} mod={'black'} />
-
-          <div className={`header__language-modal ${isLangModal ? 'active' : ''}`}>
-            <Button elem="EN" mod={lang == 'en' ? `disabled` : ''} onClick={() => changeLanguage('en')} />
-            <Button elem="RU" mod={lang == 'ru' ? `disabled` : ''} onClick={() => changeLanguage('ru')} />
-          </div>
-
-          <form className={`header__search-modal ${isSearchModal ? 'search-active' : ''}`} onSubmit={handleSubmit}>
-            <input type="text" className={`header__search-input`} value={inputValue} onChange={e => setInputValue(e.target.value)} />
-            <button className={`header__search-submit`}>
-              <img src={searchIconLight} alt="search-icon" />
-            </button>
-          </form>
         </div>
       </div>
 
@@ -323,7 +330,8 @@ function Header() {
 
           <form className={`header__search-modal header__search-modal-mobile ${isMobileSearchModal ? 'search-modal-mobile_active' : ''}`} onSubmit={handleSubmit}>
             <input type="text" className={`header__search-input header__search-input-mobile`} value={mobileInputValue} onChange={e => setMobileInputValue(e.target.value)} />
-            <input type="image" className={`header__search-submit header__search-submit-mobile`} src={darkScheme ? searchIconDark : searchIconLight} alt="search icon" name='submit' />
+
+            <button className={`header__search-submit header__search-submit-mobile`}><img src={searchIconLight} alt="search-icon" /></button>
           </form>
         </div>
 
