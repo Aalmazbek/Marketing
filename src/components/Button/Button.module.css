@@ -161,49 +161,6 @@
 
 
 
-@media (prefers-color-scheme: dark) {
-  .button{
-    white-space: nowrap;
-    color: white;
-  }
-  
-  .button:hover{
-    background: rgba(255, 255, 255, 0.1);
-  }
-
-
-
-
-  .black{
-    background: white;
-    color: black;
-  }
-
-  .black:hover{
-    background: rgb(170, 170, 170);
-  }
-
-
-
-  .disabled{
-    background: rgba(145, 158, 171, 0.2);
-    color: rgba(145, 158, 171, 0.5)!important;
-  
-    pointer-events: none;
-  }
-  
-  .disabled:hover{
-    background: rgba(145, 158, 171, 0.24);
-    color: rgba(145, 158, 171, 0.5);
-  }
-}
-
-
-
-
-
-
-
 
 
 
@@ -243,15 +200,5 @@
 
   .outlined-black:hover{
     border: 1px solid rgba(145, 158, 171, 0.32);
-  }
-
-
-
-
-
-  @media (prefers-color-scheme: dark) {
-    .button:active{
-      background: rgba(255, 255, 255, 0.1);
-    }
   }
 }
