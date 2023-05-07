@@ -1,12 +1,12 @@
 header{
-  width: 100%;
+  width: calc(100% + 1px);
   height: 95px;
 
   display: flex;
   align-items: center;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: -1px;
+  left: -1px;
   z-index: 100;
 }
 
