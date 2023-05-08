@@ -25,4 +25,7 @@ code {
 
 :root{
   --main-orange: rgba(250, 84, 28, 1);
+  --main-orange-rgb: 250, 84, 28;
+  --p-color: rgba(99, 115, 129, 1);
+  --p-color-dark: rgba(145, 158, 171, 1);
 }

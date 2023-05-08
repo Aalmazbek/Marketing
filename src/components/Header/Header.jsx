@@ -262,7 +262,7 @@ function Header() {
             <Link to='/services' className={location.pathname === '/services' ? 'link-disabled' : ''}>
               <Button elem={t("header.select.services")} mod={location.pathname === '/services' && darkScheme ? 'darkMode-disabled' : darkScheme ? 'darkMode' : ''} />
             </Link>
-            <Link to='/case-studies-list' className={location.pathname === '/case-studies-list' ? 'link-disabled' : ''}>
+            <Link to='/case-studies/list' className={location.pathname === '/case-studies-list' ? 'link-disabled' : ''}>
               <Button elem={t("header.select.case-studies")} mod={location.pathname === '/case-studies' && darkScheme ? 'darkMode-disabled' : darkScheme ? 'darkMode' : ''} />
             </Link>
             <Link to='/blog' className={location.pathname === '/blog' ? 'link-disabled' : ''}>
@@ -382,7 +382,7 @@ function Header() {
               <Link to='/services' className={location.pathname === '/services' ? 'link-disabled' : ''}>
                 <Button elem={t("header.select.services")} mod={location.pathname === '/services' ? 'disabled' : ''} />
               </Link>
-              <Link to='/case-studies-list' className={location.pathname === '/case-studies-list' ? 'link-disabled' : ''}>
+              <Link to='/case-studies/list' className={location.pathname === '/case-studies-list' ? 'link-disabled' : ''}>
                 <Button elem={t("header.select.case-studies")} mod={location.pathname === '/case-studies-list' ? 'disabled' : ''} />
               </Link>
               <Link to='/blog' className={location.pathname === '/blog' ? 'link-disabled' : ''}>
