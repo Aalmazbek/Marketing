@@ -115,5 +115,19 @@
       "card-4": "Results",
       "card-description": "Curabitur ullamcorper ultricies nisi. Praesent nonummy mi in odio. Donec mollis hendrerit risus."
     }
+  },
+  "CaseStudies": {
+    "list": {
+      "title": "Our Case Studies",
+      "description": "Nullam tincidunt adipiscing enim. Mauris sollicitudin fermentum libero.",
+      "swiper-nav": {
+        "all": "All",
+        "branding": "Branding",
+        "digital": "Digital",
+        "marketing": "Marketing",
+        "seo": "SEO",
+        "development": "Development"
+      }
+    }
   }
 }

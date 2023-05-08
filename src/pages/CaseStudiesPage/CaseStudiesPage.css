@@ -1,0 +1,363 @@
+.CaseStudies__main-container{
+  padding: 175px 0 100px 0;
+
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+
+.CaseStudies__main-container h1{
+  font-size: 48px;
+}
+
+
+
+.CaseStudies__main-container p{
+  color: var(--p-color);
+  font-size: 16px;
+}
+
+
+
+
+.CaseStudies__list-wrapper{
+  width: 100%;
+
+  padding: 30px 0 0 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+}
+
+
+.CaseStudies__list-nav{
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  position: relative;
+
+  overflow: auto;
+}
+
+.CaseStudies__list-nav::-webkit-scrollbar{
+  display: none;
+}
+
+
+.CaseStudies__list-nav-item{
+  padding: 13px 15px;
+
+  position: relative;
+  z-index: 1;
+
+  font-size: 14px!important;
+  font-weight: 600;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.CaseStudies__list-nav-item-active{
+  color: black!important;
+}
+
+.CaseStudies__list-nav-item:before{
+  content: "";
+  width: 100%;
+  height: 2px;
+
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  
+  background-color: var(--main-orange);
+  opacity: 0;
+
+  transition: 0.3s;
+
+  border-radius: 2px;
+}
+
+.CaseStudies__list-nav-item:not(.CaseStudies__list-nav-item-active):hover::before{
+  background: var(--p-color);
+  opacity: 0.3;
+}
+
+.CaseStudies__list-nav-item.CaseStudies__list-nav-item-active::before{
+  opacity: 1;
+}
+
+
+
+.CaseStudies__list-nav-indicator{
+  height: 2px;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  background-color: var(--main-orange);
+
+  border-radius: 2px;
+
+  transition: 0.3s;
+}
+
+
+
+
+.CaseStudies__list-swiper{
+  width: 100%;
+
+  padding: 0 0 50px 0;
+}
+
+
+.CaseStudies__list-swiper .swiper-button-next, .CaseStudies__list-swiper .swiper-button-prev{
+  display: none!important;
+}
+
+
+
+.CaseStudies__list-swiper .swiper-wrapper{
+  row-gap: 30px;
+}
+
+
+.CaseStudies__list-swiper .swiper-slide-active{
+  transform: none;
+}
+
+
+.CaseStudies__list-swiper-slide{
+  min-height: 20vw;
+
+  margin-top: 0!important;
+  
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.CaseStudies__list-swiper-slide img{
+  width: 100%;
+
+  border-radius: 16px;
+}
+
+
+
+.CaseStudies__list-swiper-slide > div{
+  width: 90%;
+}
+
+
+.CaseStudies__list-swiper-slide p{
+  margin-bottom: 8px;
+
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+
+.CaseStudies__list-swiper-slide h1{
+  font-size: 20px;
+}
+
+
+
+
+.CaseStudies__list-swiper-navigation{
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+.CaseStudies__list-swiper-navigation > button{
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  background: none;
+  
+  cursor: pointer;
+  user-select: none;
+}
+
+.CaseStudies__list-swiper-navigation > button img{
+  filter: brightness(0);
+}
+
+.CaseStudies__list-swiper-navigation .swiper-button-disabled{
+  cursor: default;
+}
+
+.CaseStudies__list-swiper-navigation .swiper-button-disabled img{
+  filter: brightness(100%);
+}
+
+.CaseStudies__list-swiper-nextBtn img{
+  transform: rotate(180deg);
+}
+
+
+
+
+.CaseStudies__list-swiper-pagination{
+  width: fit-content!important;
+
+  display: flex;
+}
+
+
+.CaseStudies__list-swiper-pagination .swiper-pagination-bullet{
+  padding: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: none;
+
+  font-size: 16px;
+  color: #000;
+
+  opacity: 1;
+}
+
+.CaseStudies__list-swiper-pagination .swiper-pagination-bullet-active {
+  color: var(--main-orange);
+  background: rgba(var(--main-orange-rgb), 0.1);
+}
+
+
+
+
+
+.CaseStudies__list-swiper-empty{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.CaseStudies__list-swiper-empty h1{
+  opacity: 0.5;
+  font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.CaseStudies-dark p{
+  color: var(--p-color-dark);
+}
+
+
+.CaseStudies-dark .CaseStudies__list-nav-item-active{
+  color: white!important;
+}
+
+.CaseStudies-dark .CaseStudies__list-nav-item:not(.CaseStudies__list-nav-item-active):hover::before{
+  background: white;
+  opacity: 0.4;
+}
+
+
+
+
+.CaseStudies-dark .CaseStudies__list-swiper-navigation > button img{
+  filter: brightness(200%);
+}
+
+.CaseStudies-dark .CaseStudies__list-swiper-navigation .swiper-button-disabled img{
+  filter: brightness(75%);
+}
+
+
+
+
+.CaseStudies-dark .CaseStudies__list-swiper-pagination .swiper-pagination-bullet{
+  color: white;
+}
+
+.CaseStudies-dark .CaseStudies__list-swiper-pagination .swiper-pagination-bullet-active{
+  color: var(--main-orange);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1023px) {
+  .CaseStudies__main-container{
+    padding-top: 120px;
+
+    align-items: center;
+
+    text-align: center;
+  }
+
+
+  .CaseStudies__main-container h1{
+    font-size: 32px;
+  }
+
+
+
+  .CaseStudies__list-swiper-slide{
+    text-align: left;
+  }
+
+
+  .CaseStudies__list-swiper-slide h1{
+    font-size: 18px;
+  }
+}
