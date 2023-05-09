@@ -503,6 +503,11 @@ hr{
 }
 
 
+.header-dark input{
+  color: white;
+}
+
+
 
 .header-dark .header__container-links a, .header-dark .header__container-links p{
   color: rgba(255, 255, 255, 0.7);

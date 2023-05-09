@@ -22,6 +22,7 @@ import Button from '../Button/Button'
 import { useDispatch, useSelector } from 'react-redux'
 import { changeLang, changeScheme } from '../../redux'
 import { Link, useLocation } from 'react-router-dom'
+import { useOutsideClick, useOutsideClickv2 } from '../../hooks';
 
 
 
@@ -103,16 +104,8 @@ function Header() {
 
   
   
-  const [isLangModal, setLangModal] = useState(false)
-  const [isSelectModal, setSelectModal] = useState(false)
-  const [isSearchModal, setSearchModal] = useState(false)
-  const [isMobileSearchModal, setMobileSearchModal] = useState(false)
-  const [isMobileMenuModal, setMobileMenuModal] = useState(false)
+  // const [isSearchModal, setSearchModal] = useState(false)
   const [isMobileSelect, setMobileSelect] = useState(false)
-  
-  const toggleModal = (value, setValue) => {
-    setValue(!value)
-  }
 
 
 
@@ -128,6 +121,54 @@ function Header() {
 
 
 
+
+  const [isPinned, setPinned] = useState(false)
+  const [isScrolledDown, setisScrolledDown] = useState(false)
+
+  const header = useRef()
+
+
+  const handleClickOutside = (e, modal, setIsModal) => {
+    if (!e.composedPath().includes(modal.current)) {
+      setIsModal(false)
+    }
+  }
+
+
+
+  const selectModalRef = useRef()
+  const [isSelectModal, setSelectModal] = useState(false)
+  
+  const searchModalRef = useRef()
+  const [isSearchModal, setSearchModal] = useState(false)
+
+  const langModalRef = useRef()
+  const [isLangModal, setLangModal] = useState(false)
+
+
+  const mobileSearchModalRef = useRef()
+  const [isMobileSearchModal, setIsMobileSearchModal] = useState(false)
+
+  const mobileMenuModalRef = useRef()
+  const [isMobileMenuModal, setIsMobileMenuModal] = useState(false)
+
+
+  const closeModal = (setValue) => {
+    setValue(false)
+  }
+  
+  useOutsideClick(selectModalRef, () => closeModal(setSelectModal), isSelectModal)
+  useOutsideClick(searchModalRef, () => closeModal(setSearchModal), isSearchModal)
+  useOutsideClick(langModalRef, () => closeModal(setLangModal), isLangModal)
+
+  useOutsideClick(mobileSearchModalRef, () => closeModal(setIsMobileSearchModal), isMobileSearchModal)
+  useOutsideClick(mobileMenuModalRef, () => closeModal(setIsMobileMenuModal), isMobileMenuModal)
+
+
+  const toggleModal = (value, setValue) => {
+    setValue(!value)
+  }
+
   useEffect(() => {
     const body = document.querySelector('body')
 
@@ -140,58 +181,26 @@ function Header() {
 
 
 
-  const [isPinned, setPinned] = useState(false)
-  const [isScrolledDown, setisScrolledDown] = useState(false)
-
-  
-  const header = useRef()
-
   useEffect(() => {
-    document.addEventListener('click', e => {
-      if (!e.target.classList.contains('lang-button')) {
-        setLangModal(false)
-      }
-      
-      if (!e.target.classList.contains('header__select')) {
-        setSelectModal(false)
-      }
-
-      const headerSearchBtn = document.querySelector('.search-button')
-      const headerSearchModal = document.querySelector('.header__search-modal')
-      if (!e.composedPath().includes(headerSearchBtn) && !e.composedPath().includes(headerSearchModal)) {
-        setSearchModal(false)
-      }
-
-      const headerSearchBtnMobile = document.querySelector('.search-button_mobile')
-      const headerSearchModalMobile = document.querySelector('.header__search-modal-mobile')
-      if (!e.composedPath().includes(headerSearchBtnMobile) && !e.composedPath().includes(headerSearchModalMobile)) {
-        setMobileSearchModal(false)
-      }
-
-      const burgerMenuBtnMobile = document.querySelector('.burger-menu-button_mobile')
-      const mobileHeaderMenuModal = document.querySelector('.mobile-header__menu-modal')
-      const links = Array.prototype.slice.call(document.getElementsByTagName('a'))
-      links.forEach(elem => {
-        if (e.composedPath().includes(elem)) {
-          setMobileMenuModal(false)
-        }
-      })
-      if (!e.composedPath().includes(mobileHeaderMenuModal) && !e.composedPath().includes(burgerMenuBtnMobile)) {
-        setMobileMenuModal(false)
-      }
-    })
-
     window.addEventListener('scroll', () => {
       if (window.pageYOffset > 1) {
         setisScrolledDown(true)
         setPinned(true)
       } else{
-        header.current.classList.remove('is-pinned')
         setisScrolledDown(false)
         setPinned(false)
       }
     })
   }, [])
+
+  useEffect(() => {
+    if (isScrolledDown) {
+      setPinned(true)
+      return
+    }
+    
+    setPinned(false)
+  }, [isScrolledDown])
 
 
   const logoFunc = () => {
@@ -237,7 +246,7 @@ function Header() {
   }
 
   return (
-    <header ref={header} className={`${darkModeFunc()} ${isScrolledDown ? 'is-pinned' : ''}`}>
+    <header ref={header} className={`${darkModeFunc()} ${isPinned ? 'is-pinned' : ''}`}>
       <div className={`container header__container`}>
         <nav className={`header__container-links`}>
           <Link to='/'>
@@ -249,29 +258,29 @@ function Header() {
           </Link>
           <Link to='/'>{t("header.home")}</Link>
           <a href="#">{t("header.components")}</a>
-          <p className='header__select' onClick={() => toggleModal(isSelectModal, setSelectModal)}>
+          <p className='header__select' onClick={() => setSelectModal((v) => !v)}>
             {t("header.pages")} 
             <img src={bottomArrowLight} alt="bottom arrow" className={`${isSelectModal ? 'rotate180deg' : ''}`} />
           </p>
           <a href="#">{t("header.documentation")}</a>
 
-          <div className={`header__select-modal ${isSelectModal ? 'active' : ''}`}>
-            <Link to='/' className={location.pathname === '/' ? 'link-disabled' : ''}>
+          <div ref={selectModalRef} className={`header__select-modal ${isSelectModal ? 'active' : ''}`}>
+            <Link to='/' className={location.pathname === '/' ? 'link-disabled' : ''} onClick={() => setSelectModal(false)}>
               <Button elem={t("header.home")} mod={location.pathname === '/' && darkScheme ? 'darkMode-disabled' : darkScheme ? 'darkMode' : ''} />
             </Link>
-            <Link to='/services' className={location.pathname === '/services' ? 'link-disabled' : ''}>
+            <Link to='/services' className={location.pathname === '/services' ? 'link-disabled' : ''} onClick={() => setSelectModal(false)}>
               <Button elem={t("header.select.services")} mod={location.pathname === '/services' && darkScheme ? 'darkMode-disabled' : darkScheme ? 'darkMode' : ''} />
             </Link>
-            <Link to='/case-studies/list' className={location.pathname === '/case-studies-list' ? 'link-disabled' : ''}>
-              <Button elem={t("header.select.case-studies")} mod={location.pathname === '/case-studies' && darkScheme ? 'darkMode-disabled' : darkScheme ? 'darkMode' : ''} />
+            <Link to='/case-studies/list' className={location.pathname === '/case-studies/list' ? 'link-disabled' : ''} onClick={() => setSelectModal(false)}>
+              <Button elem={t("header.select.case-studies")} mod={location.pathname === '/case-studies/list' && darkScheme ? 'darkMode-disabled' : darkScheme ? 'darkMode' : ''} />
             </Link>
-            <Link to='/blog' className={location.pathname === '/blog' ? 'link-disabled' : ''}>
+            <Link to='/blog' className={location.pathname === '/blog' ? 'link-disabled' : ''} onClick={() => setSelectModal(false)}>
               <Button elem={t("header.select.blog")} mod={location.pathname === '/blog' && darkScheme ? 'darkMode-disabled' : darkScheme ? 'darkMode' : ''} />
             </Link>
-            <Link to='/about' className={location.pathname === '/about' ? 'link-disabled' : ''}>
+            <Link to='/about' className={location.pathname === '/about' ? 'link-disabled' : ''} onClick={() => setSelectModal(false)}>
               <Button elem={t("header.select.about-us")} mod={location.pathname === '/about' && darkScheme ? 'darkMode-disabled' : darkScheme ? 'darkMode' : ''} />
             </Link>
-            <Link to='/contact' className={location.pathname === '/contact' ? 'link-disabled' : ''}>
+            <Link to='/contact' className={location.pathname === '/contact' ? 'link-disabled' : ''} onClick={() => setSelectModal(false)}>
               <Button elem={t("header.select.contact")} mod={location.pathname === '/contact' && darkScheme ? 'darkMode-disabled' : darkScheme ? 'darkMode' : ''} />
             </Link>
           </div>
@@ -283,13 +292,13 @@ function Header() {
           />
 
           <div className='search-wrapper'>
-            <Button 
+            <Button
               className={`search-button ${isSearchModal ? 'hide' : ''}`} 
               elem={<img src={searchIconLight} alt='search icon' />} 
-              onClick={() => toggleModal(isSearchModal, setSearchModal)} 
+              onClick={() => setSearchModal((v) => !v)} 
             />
 
-            <form className={`header__search-modal ${isSearchModal ? 'search-active' : ''}`} onSubmit={handleSubmit}>
+            <form ref={searchModalRef} className={`header__search-modal ${isSearchModal ? 'search-active' : ''}`} onSubmit={handleSubmit}>
               <input type="text" className={`header__search-input`} value={inputValue} onChange={e => setInputValue(e.target.value)} />
               <button className={`header__search-submit`}>
                 <img src={searchIconLight} alt="search-icon" />
@@ -301,12 +310,24 @@ function Header() {
             <Button 
               className={`lang-button`} 
               elem={<img src={languageIconLight} alt='language icon' />} 
-              onClick={() => toggleModal(isLangModal, setLangModal)} 
+              onClick={() => setLangModal(true)}
             />
 
-            <div className={`header__language-modal ${isLangModal ? 'active' : ''}`}>
-              <Button elem="EN" mod={lang == 'en' ? `disabled` : ''} onClick={() => changeLanguage('en')} />
-              <Button elem="RU" mod={lang == 'ru' ? `disabled` : ''} onClick={() => changeLanguage('ru')} />
+            <div ref={langModalRef} className={`header__language-modal ${isLangModal ? 'active' : ''}`}>
+              <Button 
+                elem="EN" mod={lang == 'en' ? `disabled` : ''} 
+                onClick={() => {
+                  changeLanguage('en');
+                  closeModal(setLangModal)
+                }} 
+              />
+              <Button 
+                elem="RU" mod={lang == 'ru' ? `disabled` : ''} 
+                onClick={() => {
+                  changeLanguage('ru')
+                  closeModal(setLangModal)
+                }} 
+              />
             </div>
           </div>
 
@@ -324,18 +345,18 @@ function Header() {
         <img className={`header__logo`} src={logoFunc()} alt="ZONE logo" />
 
         <div className={`header__burger-menu`}>
-          <Button className={`burger-menu-button_mobile`} elem={<img src={burgerMenuIconLight} alt='burger menu icon' />} onClick={() => toggleModal(isMobileMenuModal, setMobileMenuModal)} />
+          <Button className={`burger-menu-button_mobile`} elem={<img src={burgerMenuIconLight} alt='burger menu icon' />} onClick={() => toggleModal(isMobileMenuModal, setIsMobileMenuModal)} />
 
-          <Button className={`search-button_mobile ${isMobileSearchModal ? 'hide' : ''}`} elem={<img src={searchIconLight} alt='search icon' />} onClick={() => toggleModal(isMobileSearchModal, setMobileSearchModal)} />
+          <Button className={`search-button_mobile ${isMobileSearchModal ? 'hide' : ''}`} elem={<img src={searchIconLight} alt='search icon' />} onClick={() => toggleModal(isMobileSearchModal, setIsMobileSearchModal)} />
 
-          <form className={`header__search-modal header__search-modal-mobile ${isMobileSearchModal ? 'search-modal-mobile_active' : ''}`} onSubmit={handleSubmit}>
+          <form ref={mobileSearchModalRef} className={`header__search-modal header__search-modal-mobile ${isMobileSearchModal ? 'search-modal-mobile_active' : ''}`} onSubmit={handleSubmit}>
             <input type="text" className={`header__search-input header__search-input-mobile`} value={mobileInputValue} onChange={e => setMobileInputValue(e.target.value)} />
 
             <button className={`header__search-submit header__search-submit-mobile`}><img src={searchIconLight} alt="search-icon" /></button>
           </form>
         </div>
 
-        <div className={`container mobile-header__menu-modal ${isMobileMenuModal ? 'mobile-header__menu-modal_active' : ''} ${darkScheme ? 'mobile-header__menu-modal-dark' : ''}`}>
+        <div ref={mobileMenuModalRef} className={`container mobile-header__menu-modal ${isMobileMenuModal ? 'mobile-header__menu-modal_active' : ''} ${darkScheme ? 'mobile-header__menu-modal-dark' : ''}`}>
           <div className='container mobile-header__menu-modal-header'>
             <img className={`header__logo mobile-header__logo`} src={darkScheme ? mainLogoDark : mainLogoLight} alt="ZONE logo" />
 
@@ -351,13 +372,25 @@ function Header() {
               <Button 
                 className={`mobile-header__close-button`} 
                 elem={<img src={crossIconLight} alt="cross icon" />} 
-                onClick={() => setMobileMenuModal(false)} 
+                onClick={() => setIsMobileMenuModal(false)}
               />
             </div>
 
             <div className={`header__language-modal mobile-header__language-modal ${isLangModal ? 'active' : ''}`}>
-              <Button elem="EN" mod={lang == 'en' ? `disabled` : ''} onClick={() => changeLanguage('en')} />
-              <Button elem="RU" mod={lang == 'ru' ? `disabled` : ''} onClick={() => changeLanguage('ru')} />
+            <Button 
+                elem="EN" mod={lang == 'en' ? `disabled` : ''} 
+                onClick={() => {
+                  changeLanguage('en');
+                  closeModal(setLangModal)
+                }} 
+              />
+              <Button 
+                elem="RU" mod={lang == 'ru' ? `disabled` : ''} 
+                onClick={() => {
+                  changeLanguage('ru')
+                  closeModal(setLangModal)
+                }} 
+              />
             </div>
           </div>
           
@@ -376,22 +409,22 @@ function Header() {
               onClick={() => toggleModal(isMobileSelect, setMobileSelect)}
             />
             <div className={`mobile-header__select-container ${isMobileSelect ? 'mobile-header__select-container_active' : ''}`}>
-              <Link to='/' className={'link ' + location.pathname === '/' ? 'link-disabled' : ''}>
+              <Link to='/' className={'link ' + location.pathname === '/' ? 'link-disabled' : ''} onClick={() => setIsMobileMenuModal(false)}>
                 <Button elem={t("header.home")} mod={location.pathname === '/' ? 'disabled' : ''} />
               </Link>
-              <Link to='/services' className={location.pathname === '/services' ? 'link-disabled' : ''}>
+              <Link to='/services' className={location.pathname === '/services' ? 'link-disabled' : ''} onClick={() => setIsMobileMenuModal(false)}>
                 <Button elem={t("header.select.services")} mod={location.pathname === '/services' ? 'disabled' : ''} />
               </Link>
-              <Link to='/case-studies/list' className={location.pathname === '/case-studies-list' ? 'link-disabled' : ''}>
-                <Button elem={t("header.select.case-studies")} mod={location.pathname === '/case-studies-list' ? 'disabled' : ''} />
+              <Link to='/case-studies/list' className={location.pathname === '/case-studies/list' ? 'link-disabled' : ''} onClick={() => setIsMobileMenuModal(false)}>
+                <Button elem={t("header.select.case-studies")} mod={location.pathname === '/case-studies/list' ? 'disabled' : ''} />
               </Link>
-              <Link to='/blog' className={location.pathname === '/blog' ? 'link-disabled' : ''}>
+              <Link to='/blog' className={location.pathname === '/blog' ? 'link-disabled' : ''} onClick={() => setIsMobileMenuModal(false)}>
                 <Button elem={t("header.select.blog")} mod={location.pathname === '/blog' ? 'disabled' : ''} />
               </Link>
-              <Link to='/about' className={location.pathname === '/about' ? 'link-disabled' : ''}>
+              <Link to='/about' className={location.pathname === '/about' ? 'link-disabled' : ''} onClick={() => setIsMobileMenuModal(false)}>
                 <Button elem={t("header.select.about-us")} mod={location.pathname === '/about' ? 'disabled' : ''} />
               </Link>
-              <Link to='/contact' className={location.pathname === '/contact' ? 'link-disabled' : ''}>
+              <Link to='/contact' className={location.pathname === '/contact' ? 'link-disabled' : ''} onClick={() => setIsMobileMenuModal(false)}>
                 <Button elem={t("header.select.contact")} mod={location.pathname === '/contact' ? 'disabled' : ''} />
               </Link>
             </div>
