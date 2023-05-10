@@ -109,7 +109,7 @@ function LatestPosts() {
                 </div>
 
                 <div className='swiper-slide-footer'>
-                  <img src={elem.image} alt="" />
+                  <img src={elem.image} alt="avatar" />
                   <p>{elem.user}</p>
                 </div>
               </SwiperSlide>
@@ -117,11 +117,11 @@ function LatestPosts() {
           </Swiper>
 
           <button className="swiper-button-prev-unique">
-            <img src={leftArrow} alt="arrow icon" />
+            <img src={leftArrow} alt="arrow-prev" />
           </button>
 
           <button className="swiper-button-next-unique">
-            <img src={rightArrow} alt="" />
+            <img src={rightArrow} alt="arrow-next" />
           </button>
         </div>
       </div>
