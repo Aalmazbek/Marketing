@@ -58,6 +58,7 @@
 
   font-size: 14px!important;
   font-weight: 600;
+  white-space: nowrap;
 
   cursor: pointer;
   user-select: none;
