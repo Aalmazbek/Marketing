@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 
 import './App.css';
@@ -14,14 +14,12 @@ import CaseStudiesPage from './pages/CaseStudiesPage/CaseStudiesPage';
 import ContactPage from './pages/ContactPage/ContactPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import ServicesPage from './pages/ServicesPage/ServicesPage';
-import { changeScheme } from './redux';
 
 
 
 
 function App() {
   const darkScheme = useSelector(state => state.general.darkScheme)
-  const dispatch = useDispatch()
 
   
 
