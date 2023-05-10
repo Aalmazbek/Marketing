@@ -12,6 +12,7 @@ import BlogPage from './pages/BlogPage/BlogPage';
 import CaseStudiesDetailsPage from './pages/CaseStudiesDetailsPage/CaseStudiesDetailsPage';
 import CaseStudiesPage from './pages/CaseStudiesPage/CaseStudiesPage';
 import ContactPage from './pages/ContactPage/ContactPage';
+import HomePage from './pages/HomePage/HomePage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import ServicesPage from './pages/ServicesPage/ServicesPage';
 
@@ -30,6 +31,7 @@ function App() {
 
       <main>
         <Routes>
+          <Route path='/' element={<HomePage />} />
           <Route path='/services' element={<ServicesPage />} />
           <Route path='/case-studies/list' element={<CaseStudiesPage />} />
           <Route path='/case-studies-details' element={<CaseStudiesDetailsPage />} />
