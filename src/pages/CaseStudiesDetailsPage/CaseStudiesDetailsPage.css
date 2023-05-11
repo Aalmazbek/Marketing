@@ -1,0 +1,351 @@
+.CaseStudiesDetails{
+  padding-top: 180px;
+}
+
+
+.CaseStudiesDetails__top-image img{
+  width: 100%;
+
+  border-radius: 16px;
+}
+
+
+
+
+.CaseStudiesDetails__nav-container{
+  margin: 80px auto;
+}
+
+
+.CaseStudiesDetails__nav{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.CaseStudiesDetails__nav > a{
+  white-space: nowrap;
+}
+
+.CaseStudiesDetails__nav > a:hover{
+  opacity: 0.5;
+}
+
+
+
+.CaseStudiesDetails__nav > a:last-of-type{
+  opacity: 0.5;
+}
+
+
+
+.CaseStudiesDetails__nav img{
+  transform: scale(-1);
+}
+
+
+
+
+
+
+.CaseStudiesDetails__main-container{
+  padding-bottom: 120px;
+
+  align-items: flex-start;
+  gap: 60px;
+}
+
+
+.CaseStudiesDetails__main-content{
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+
+.CaseStudiesDetails__main-content section{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+.CaseStudiesDetails__main-content h1{
+  font-size: 36px;
+}
+
+
+
+.CaseStudiesDetails__main p{
+  font-size: 16px;
+  line-height: 175%;
+}
+
+
+
+.CaseStudiesDetails__main-content ul{
+  padding-left: 20px;
+}
+
+
+.CaseStudiesDetails__main-content ul > li{
+  font-size: 16px;
+  line-height: 175%;
+}
+
+
+
+.CaseStudiesDetails__main-swiper-header, .CaseStudiesDetails__main-swiper-header > div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.CaseStudiesDetails__main-swiper-header > div{
+  gap: 10px;
+}
+
+
+.CaseStudiesDetails__main-swiper-header > div > button{
+  padding: 15px 10px;
+
+  display: flex;
+  align-items: center;
+  
+  background: none;
+
+  cursor: pointer;
+}
+
+
+.CaseStudiesDetails__main-swiper-header > div > button:last-of-type img{
+  transform: scale(-1);
+}
+
+
+.swiper-button-disabled{
+  opacity: 0.5;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+
+
+
+.CaseStudiesDetails__main-swiper{
+  width: 100%;
+
+  margin-top: 30px;
+}
+
+
+.CaseStudiesDetails__main-swiper-slide{
+  height: 190px;
+
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  border-radius: 16px;
+
+}
+
+
+.CaseStudiesDetails__main-swiper-slide img{
+  width: 100%;
+}
+
+
+
+
+
+.CaseStudiesDetails__main-aside{
+  max-width: 340px;
+  width: 50%;
+  min-width: 250px;
+
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  position: sticky;
+  top: 97px;
+  right: 0;
+
+  background-color: rgba(249, 250, 251, 1);
+
+  border-radius: 16px;
+}
+
+
+.CaseStudiesDetails__main-aside span{
+  color: var(--p-color);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+
+.CaseStudiesDetails__main-aside h1{
+  font-size: 24px;
+}
+
+
+
+.CaseStudiesDetails__main-aside p{
+  font-size: 14px;
+}
+
+
+
+.CaseStudiesDetails__main-aside-type{
+}
+
+
+
+.CaseStudiesDetails__main-aside hr{
+  width: 100%;
+  height: 1px;
+
+  clear:both;
+  display:block;
+
+  background: none;
+
+  border-top: 1px dashed rgba(0, 0, 0, 0.2);
+}
+
+
+
+.CaseStudiesDetails__main-aside-links{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
+.CaseStudiesDetails__main-aside-links a{
+  display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.App-dark .CaseStudiesDetails__nav img, .App-dark .CaseStudiesDetails__main-swiper-header > div > button img{
+  filter: contrast(0) brightness(200%);
+}
+
+
+
+
+.App-dark .CaseStudiesDetails__main-aside{
+
+  background-color: rgba(145, 158, 171, 0.12);
+}
+
+
+.App-dark .CaseStudiesDetails__main-aside hr{
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 576px){
+  .CaseStudiesDetails{
+    padding-top: 120px;
+  }
+
+
+  .CaseStudiesDetails__nav-container{
+    margin: 40px auto;
+  }
+
+
+  .CaseStudiesDetails__nav a{
+    max-width: 75px;
+
+    position: relative;
+    overflow: hidden;
+
+    font-size: 13px;
+  }
+
+
+
+
+  .CaseStudiesDetails__main-container{
+    padding-bottom: 80px;
+
+    flex-direction: column;
+  }
+
+
+  .CaseStudiesDetails__main-content{
+    width: 100%;
+  }
+
+
+  .CaseStudiesDetails__main-content h1{
+    font-size: 24px;
+  }
+
+
+  .CaseStudiesDetails__main-swiper-slide{
+    height: 250px;
+  }
+
+
+
+
+  .CaseStudiesDetails__main-aside{
+    width: 100%;
+
+    position: static;
+    order: -1;
+  }
+
+
+  .CaseStudiesDetails__main-aside h1{
+    font-size: 20px;
+  }
+}

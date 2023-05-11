@@ -14,8 +14,10 @@ import "swiper/css/pagination";
 import './CaseStudiesPage.css'
 import css from './CaseStudiesPage.module.css'
 import prevArrowIcon from './assets/prev-arrow-icon.svg'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
+import { setCaseStudiesDetails } from '../../redux'
 
 
 
@@ -157,6 +159,16 @@ function CaseStudiesPage() {
   const nextBtn = useRef()
 
 
+  const dispatch = useDispatch()
+
+  const handleSlideClick = (elem) => {
+    dispatch(setCaseStudiesDetails({
+      title: elem.title,
+      type: elem.type
+    }))
+  }
+
+
 
 
   return (
@@ -225,11 +237,13 @@ function CaseStudiesPage() {
               >
                 {cards.length ? cards.map((elem, index) => 
                   <SwiperSlide key={Date.now() + index} className='CaseStudies__list-swiper-slide'>
-                    <img src={elem.image} alt={'image-'+index} />
-                    <div>
-                      <p>{t('CaseStudies.list.swiper-nav.' + elem.type)}</p>
-                      <h1>{elem.title}</h1>
-                    </div>
+                    <Link to='/case-studies/list/details' onClick={() => handleSlideClick(elem)}>
+                      <img src={elem.image} alt={'image-'+index} />
+                      <div>
+                        <p>{t('CaseStudies.list.swiper-nav.' + elem.type)}</p>
+                        <h1>{elem.title}</h1>
+                      </div>
+                    </Link>
                   </SwiperSlide>
                 ) : (
                   <div className="CaseStudies__list-swiper-empty">

@@ -1,5 +1,6 @@
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
 import './App.css';
 import Footer from './components/Footer/Footer';
@@ -17,6 +18,17 @@ import ServicesPage from './pages/ServicesPage/ServicesPage';
 
 
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
+
 
 function App() {
   const darkScheme = useSelector(state => state.general.darkScheme)
@@ -26,13 +38,14 @@ function App() {
 
   return (
     <div className={`App ${darkScheme ? 'App-dark' : ''}`}>
+      <ScrollToTop />
       <Header />
 
       <main>
         <Routes>
           <Route path='/services' element={<ServicesPage />} />
           <Route path='/case-studies/list' element={<CaseStudiesPage />} />
-          <Route path='/case-studies-details' element={<CaseStudiesDetailsPage />} />
+          <Route path='/case-studies/list/details' element={<CaseStudiesDetailsPage />} />
           <Route path='/blog' element={<BlogPage />} />
           <Route path='/blog-details' element={<BlogDetailsPage />} />
           <Route path='/about' element={<AboutPage />} />

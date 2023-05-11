@@ -8,7 +8,8 @@ const generalSlice = createSlice({
   name: 'general',
   initialState: {
     darkScheme: JSON.parse(localStorage.getItem('darkScheme')) || false,
-    lang: JSON.parse(localStorage.getItem('lang')) || 'en'
+    lang: JSON.parse(localStorage.getItem('lang')) || 'en',
+    caseStudiesDetails: JSON.parse(localStorage.getItem('case-studies-details')) || ''
   },
   reducers: {
     changeScheme: (state, action) => {
@@ -16,11 +17,14 @@ const generalSlice = createSlice({
     },
     changeLang: (state, action) => {
       state.lang = action.payload
+    },
+    setCaseStudiesDetails: (state, action) => {
+      state.caseStudiesDetails = action.payload
     }
   }
 })
 
-export const {changeScheme, changeLang} = generalSlice.actions
+export const {changeScheme, changeLang, setCaseStudiesDetails} = generalSlice.actions
 
 
 
@@ -38,4 +42,5 @@ store.subscribe(() => {
 
   localStorage.setItem('darkScheme', JSON.stringify(state.general.darkScheme))
   localStorage.setItem('lang', JSON.stringify(state.general.lang))
+  localStorage.setItem('case-studies-details', JSON.stringify(state.general.caseStudiesDetails))
 })
