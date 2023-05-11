@@ -134,7 +134,8 @@
         "summary": "Summary",
         "website": "Website",
         "category": "Category",
-        "date": "Date"
+        "date": "Date",
+        "share": "Share"
       }
     }
   }
