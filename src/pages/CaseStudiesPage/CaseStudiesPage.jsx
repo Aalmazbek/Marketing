@@ -12,7 +12,6 @@ import "swiper/css/pagination";
 
 
 import './CaseStudiesPage.css'
-import css from './CaseStudiesPage.module.css'
 import prevArrowIcon from './assets/prev-arrow-icon.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'

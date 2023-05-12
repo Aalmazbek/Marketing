@@ -269,6 +269,7 @@ function BlogPage() {
                 count={Math.ceil(postsArray.length/8)} 
                 className='BlogPage__posts-main-pagination' classes={{ ul: classes.ul}}
                 page={page}
+                boundaryCount={0}
                 onChange={handlePaginationCHange}
               />
             </div>
