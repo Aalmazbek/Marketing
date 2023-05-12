@@ -232,6 +232,7 @@ function CaseStudiesPage() {
                     return '<span class="' + className + '">' + (index + 1) + '</span>'
                   }
                 }}
+                speed={0}
                 modules={[Grid, Pagination, Navigation]}
                 className="CaseStudies__list-swiper"
               >
