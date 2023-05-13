@@ -204,5 +204,42 @@
       "title": "Часто задаваемые вопросы",
       "h1": "Часто задаваемые вопросы"
     }
+  },
+  "AboutPage": {
+    "first__container": {
+      "title": "Кто мы есть?",
+      "button": "Проверьте нашу работу"
+    }
+    ,
+    "second__container": {
+      "experience": "Годы опыта",
+      "awards": "Награды",
+      "projects": "Проекты",
+      "clients": "Счастливые клиенты"
+    }
+    ,
+    "vision__container": {
+      "title": "Наш взгляд",
+      "description": "Наше видение предлагает лучший продукт. nulla vehicula tortor scelerisque ultrices malesuada. "
+    },
+    "value__container": {
+      "title": "Наши основные ценности",
+      "customer": "Удовлетворенность клиентов",
+      "transparency": "Прозрачность",
+      "reputation": "Репутация",
+      "cooperation": "Сотрудничество"
+    },
+    "story__container": {
+      "title": "Наша история",
+      "business": "Бизнес-концепция",
+      "rewiew": "Юридический обзор",
+      "design": "Инфраструктурный дизайн",
+      "company": "Компания создана"
+    },
+    "key__container": {
+      "title": "Отличная команда – это ключ",
+      "description": "Поскольку каркасные визуализации относительно просты и быстро рассчитываются, они часто используются в случаях",
+      "marketing": "Маркетинг"
+    }
   }
 }

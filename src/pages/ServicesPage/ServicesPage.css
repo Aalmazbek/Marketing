@@ -314,66 +314,48 @@
 
 .ServicesPage__main-4{
   position: relative;
-
   background-size: cover;
   background-position: center;
 }
 
-
 .ServicesPage__main-4-background{
   width: 100%;
   height: 100%;
-
   position: absolute;
   top: 0;
   left: 0;
   z-index: 0;
-
   background: rgba(0, 0, 0, 0.7);
 }
 
-
 .ServicesPage__main-4-container{
   padding: 120px 0;
-
   gap: 80px;
-
   position: relative;
   z-index: 1;
-
   flex-direction: column;
 }
-
 
 .ServicesPage__main-4-container p{
   color: rgba(255, 255, 255, 0.7);
 }
-
 
 .ServicesPage__main-4-title{
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
-
   text-align: center;
 }
-
 
 .ServicesPage__main-4-title h1{
   font-size: 48px;
 }
 
-
-
 .ServicesPage__main-4-title p{
   max-width: 500px;
-
   font-size: 16px;
 }
-
-
-
 
 .ServicesPage__main-4-cards-wrapper{
   display: grid;
@@ -390,7 +372,6 @@
     "s4 ."
     "c4 .";
 }
-
 
 .ServicesPage__main-4-step{
   position: relative;
@@ -412,7 +393,6 @@
   border-radius: 15px;
 }
 
-
 .ServicesPage__main-4-step::before{
   right: -20px;
 }
@@ -424,8 +404,6 @@
 .ServicesPage__main-4-step:nth-of-type(1)::before{
   background: rgba(250, 84, 28, 1);
 }
-
-
 
 .ServicesPage__main-4-step:nth-of-type(3){
   color: rgba(255, 200, 26, 1);
@@ -439,9 +417,6 @@
   left: -20px;
 }
 
-
-
-
 .ServicesPage__main-4-step:nth-of-type(2){
   color: rgba(34, 184, 207, 1);
 }
@@ -449,8 +424,6 @@
 .ServicesPage__main-4-step:nth-of-type(2)::before{
   background: rgba(34, 184, 207, 1);
 }
-
-
 
 .ServicesPage__main-4-step:nth-of-type(4){
   color: rgba(12, 214, 110, 1);
@@ -464,23 +437,16 @@
   margin-left: 15px;
 }
 
-
-
 .ServicesPage__main-4-step:nth-of-type(2n){
   margin-right: 13px;
   text-align: right;
 }
-
-
-
 
 .ServicesPage__main-4-card{
   padding: 0 22px 50px 22px;
 
   border-left: 1px solid rgba(145, 158, 171, 0.24);
 }
-
-
 
 .ServicesPage__main-4-card:nth-of-type(2n){
   border: none;
@@ -489,14 +455,11 @@
   text-align: right;
 }
 
-
 .ServicesPage__main-4-card h1{
   margin-bottom: 8px;
 
   font-size: 24px;
 }
-
-
 
 .ServicesPage__main-4-card p{
   max-width: 380px;

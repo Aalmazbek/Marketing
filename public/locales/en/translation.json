@@ -204,5 +204,40 @@
       "title": "FAQS",
       "h1": "Frequently Asked Questions"
     }
+  },
+  "AboutPage": {
+    "first__container": {
+      "title": "Who We Are?",
+      "button": "Check Our Work"
+    },
+    "second__container": {
+      "experience": "Years of experience",
+      "awards": "Awards",
+      "projects": "Projects",
+      "clients": "Happy clients"
+    },
+    "vision__container": {
+      "title": "Our Vision",
+      "description": "Our vision offering the best product nulla vehicula tortor scelerisque ultrices malesuada. "
+    },
+    "value__container": {
+      "title": "Our Core Values",
+      "customer": "Customer Satisfaction",
+      "transparency": "Transparency",
+      "reputation": "Reputation",
+      "cooperation": "Cooperation"
+    },
+    "story__container": {
+      "title": "Our Story",
+      "business": "Business Conception",
+      "rewiew": "Legal Rewiew",
+      "design": "Infrastucture Design",
+      "company": "Company Established"
+    },
+    "key__container": {
+      "title": "Great Team Is The Key",
+      "description": "Since wire-frame renderings are relatively simple and fast to calculate, they are often used in cases",
+      "marketing": "Marketing"
+    }
   }
 }

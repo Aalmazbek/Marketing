@@ -835,26 +835,6 @@ section {
     margin-left: 37px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .FAQS__container {
     position: relative;
     margin-top: 15vh;
@@ -888,4 +868,13 @@ section {
     height: 1px;
     width: 600px;
     background: rgba(145, 158, 171, 0.24);
+}
+
+
+
+
+
+
+@media screen and (max-width: 375px) {
+    
 }
