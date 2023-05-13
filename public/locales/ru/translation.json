@@ -129,5 +129,80 @@
         "development": "Разработка"
       }
     }
+  },
+  "HomePage": {
+    "first__container": {
+      "title": "Цифровой маркетинг",
+      "h1": "Увеличивает посещаемость вашего сайта",
+      "p": "Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit amet eros.",
+      "button-1": "Побробовать бесплатно",
+      "button-2": "Увидить наши работы"
+    },
+    "second__container": {
+      "title": "О НАС",
+      "h1": "Кто мы",
+      "p": "In hac habitasse platea dictumst. Aliquam lobortis. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In dui magna, posuere eget, vestibulum et, tempor auctor, justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      "button": "Узнайте больше",
+      "projects": "ПРОЕКТЫ",
+      "clients": "СЧАТЛИВЫЕ КЛИЕНТЫ",
+      "experience": "ГОДЫ ОПЫТА"
+    },
+    "third__container": {
+      "title": "Наши сервисы",
+      "h1": "Мы предоставляем",
+      "seo": "CЭО",
+      "email": "Рекламная рассылка",
+      "search": "Поисковая оптимизация",
+      "social": "Социальный маркетинг"
+    },
+    "forth__container": {
+      "title": "Рабочий процесс",
+      "h1": "Рабочий процесс",
+      "planning": "Планирование",
+      "research": "Исследовать",
+      "optimizing": "Оптимизация",
+      "results": "Pезультаты"
+    },
+    "our__work": {
+      "title": "Наши работы",
+      "h1": "Тематические исследования",
+      "branding": "брендинг",
+      "social": "СОЦИАЛЬНОЕ",
+      "marketing": "маркетинг",
+      "button": "Узнать больше",
+      "seo": "СЕО",
+      "web": "ВЕБ",
+      "button-2": "Посмотреть все",
+      "bank": "Банк Америки"
+    },
+    "team__container": {
+      "title": "Команда",
+      "h1": "Познакомьтесь с нашей командой",
+      "designer": "ПИ Дизайнер",
+      "developer": "Полный стек разработчик",
+      "manager": "Руководитель проекта"
+    },
+    "pricing__container": {
+      "title": "Цены",
+      "h1": "Проверьте наши цены",
+      "choose": "Выберите идеальный план для ваших нужд. Всегда гибкий для роста",
+      "monthly": "ЕЖЕМЕСЯЧНО",
+      "yearly": "ЕЖЕГОДНО (сэкономьте 10%)"
+    },
+    "blocks__container": {
+      "basic": "Базовый",
+      "standard": "Стандарт",
+      "premium": "Премиум",
+      "auto": "Режим автоматического обновления",
+      "online": "Онлайн оператор 24/7",
+      "posting": "Международная отправка",
+      "unique": "Уникальные рассылки",
+      "design": "20 шаблонов дизайна",
+      "button": "Начать"
+    },
+    "FAQS__container": {
+      "title": "Часто задаваемые вопросы",
+      "h1": "Часто задаваемые вопросы"
+    }
   }
 }
