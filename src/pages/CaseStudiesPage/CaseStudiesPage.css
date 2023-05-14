@@ -137,9 +137,14 @@
 
 
 .CaseStudies__list-swiper-slide{
-  min-height: 20vw;
-
   margin-top: 0!important;
+}
+
+
+
+
+.CaseStudies__list-swiper-slide > a{
+  min-height: 20vw;
   
   display: flex;
   align-items: center;
@@ -154,9 +159,12 @@
   border-radius: 16px;
 }
 
+.CaseStudies__list-swiper-slide img:hover{
+  transform: scale(0.98);
+}
 
 
-.CaseStudies__list-swiper-slide > div{
+.CaseStudies__list-swiper-slide  div{
   width: 90%;
 }
 

@@ -62,6 +62,10 @@ input::-webkit-inner-spin-button {
 
 button{
   border: none;
+  cursor: pointer;
+}
+button:active{
+  transition: 0s;
 }
 
 
@@ -91,6 +95,13 @@ button{
   justify-content: space-between;
   align-items: center;
 }
+
+
+.swiper-button-prev, .swiper-button-next{
+  display: none!important;
+}
+
+
 
 
 

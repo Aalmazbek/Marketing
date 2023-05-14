@@ -1,0 +1,359 @@
+section {
+    padding-top: 120px;
+}
+
+.first__container-description {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.first__container-description h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 64px;
+}
+
+.first__container-description button {
+    width: 198px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 11px 22px;
+    gap: 2px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 26px;
+    background: #FFFFFF;
+    border: 1px solid rgba(145, 158, 171, 0.32);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.second__container {
+    display: flex;
+    flex-direction: row;
+    gap: 5vh;
+    margin-top: 15vh;
+}
+
+.second__container-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15vh;
+}
+
+.second__container-block h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 64px;
+}
+
+.second__container-block p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #637381;
+}
+
+.vision__container-block {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15vh;
+    background: url('./assets/visionIcon.png');
+    height: 648px;
+    width: 1152px;
+    border-radius: 16px;
+    padding-top: 10vh;
+    margin-top: 15vh;
+}
+
+.vision__container-block h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 64px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.vision__container-block button {
+    width: 64px;
+    height: 64px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.vision__container-block p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: #FFFFFF;
+    text-align: center;
+    width: 630px;
+}
+
+.value__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10vh;
+    margin-top: 15vh;
+}
+
+.value__container h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 64px;
+}
+
+.value__container-blocks {
+    display: flex;
+    gap: 10vh;
+}
+
+.value__container-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+}
+
+.value__container-block h1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.value__container-block p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #637381;
+}
+
+.story__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12vh;
+}
+
+.story__container-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 15vh;
+    gap: 30px;
+}
+
+.story__container-description h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 64px;
+}
+
+.story__container-description p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #637381;
+}
+
+.story__container-blocks {
+    display: flex;
+    gap: 60px;
+}
+
+.story__container-block-one {
+    margin-top: 20vh;
+    text-align: end;
+}
+
+.story__container-block-one div:last-child {
+    margin-top: 25vh;
+}
+
+.story__container-block-two div:last-child {
+    margin-top: 25vh;
+}
+
+.story__container-block-three{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 178px;
+    padding-left: 378px;
+    padding-top: 5px;
+}
+
+.circle__one {
+    width: 12px;
+    height: 12px;
+    background: #FA541C;
+    border-radius: 10px;
+}
+
+.circle__two {
+    width: 12px;
+    height: 12px;
+    background: #22B8CF;
+    border-radius: 10px;
+}
+
+.circle__three {
+    width: 12px;
+    height: 12px;
+    background: #FFC81A;
+    border-radius: 10px;
+}
+
+.circle__four {
+    width: 12px;
+    height: 12px;
+    background: #0CD66E;
+    border-radius: 10px;
+}
+
+.card-1 {
+    text-align: end;
+}
+
+.story__container-block {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.story__container-block h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.story__container-block a {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 26px;
+    color: #637381;
+}
+
+.card-1 p {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 24px;
+    color: #22B8CF;
+}
+
+.card-2 p {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 24px;
+    color: #FA541C;
+}
+
+.card-3 p {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 24px;
+    color: #0CD66E;
+}
+
+.card-4 p {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 24px;
+    color: #FFC81A;
+}
+
+
+
+
+
+
+
+
+
+.key__container {
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+}
+
+
+.key__container-description {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 15vh;
+    gap: 30px;
+}
+
+.key__container-description h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 64px;
+}
+
+.key__container-description p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #637381;
+    width: 480px;
+}
+
+.key__container-cards {
+    display: flex;
+    gap: 45px;
+}
+
+.key__container-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+}
+
+.key__container-card img {
+    border-radius: 20px;
+}
+
+.key__container-card h1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.key__container-card p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 24px;
+    color: #919EAB;
+}
