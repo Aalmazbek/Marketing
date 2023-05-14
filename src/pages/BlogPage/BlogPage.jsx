@@ -12,6 +12,7 @@ import arrowIcon2 from './assets/arrow-icon2.svg'
 import searchIcon from './assets/search-icon.svg'
 import Button from '../../components/Button/Button';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -206,7 +207,7 @@ function BlogPage() {
               modules={[swiperPagination, Navigation]}
               className="BlogPage__swiper"
             >
-              {swiperCards.length ? swiperCards.map((elem, index) => 
+              {swiperCards.map((elem, index) => 
                 <SwiperSlide key={Date.now() + index} className='BlogPage__swiper-slide'>
                   <div className="BlogPage__swiper-slide-image">
                     <img src={elem.image} alt={elem.title} />
@@ -225,10 +226,6 @@ function BlogPage() {
                     </div>
                   </div>
                 </SwiperSlide>
-              ) : (
-                <div className="CaseStudies__list-swiper-empty">
-                  <h1>Empty...</h1>
-                </div>
               )}
             </Swiper>
 
@@ -245,23 +242,26 @@ function BlogPage() {
           <div className="container BlogPage__posts-container">
             <div className="BlogPage__posts-main">
               <div className="BlogPage__posts-main-list">
-                {cards.map((elem, index) => <section key={index + elem.day} className={`LatestPosts__swiper-slide BlogPage__post-card`}>
-                    <img className='BlogPage__post-card-background-image' src={elem.backgroundImage} alt="background-image" />
+                {cards.map((elem, index) => 
+                  <Link to={`/blog/details/${index}`}>
+                    <section key={index + elem.day} className={`LatestPosts__swiper-slide BlogPage__post-card`}>
+                      <img className='BlogPage__post-card-background-image' src={elem.backgroundImage} alt="background-image" />
 
-                    <div className='swiper-slide-background BlogPage__post-card-dimming'>
-                    </div>
-                    
-                    <div className='swiper-slide-header BlogPage__post-card-header'>
-                      <p>{elem.day} {elem.month} {elem.year} • {elem.min} mins read</p>
+                      <div className='swiper-slide-background BlogPage__post-card-dimming'>
+                      </div>
+                      
+                      <div className='swiper-slide-header BlogPage__post-card-header'>
+                        <p>{elem.day} {elem.month} {elem.year} • {elem.min} mins read</p>
 
-                      <h3>{elem.title}</h3>
-                    </div>
+                        <h3>{elem.title}</h3>
+                      </div>
 
-                    <div className='swiper-slide-footer BlogPage__post-card-footer'>
-                      <img src={elem.image} alt="avatar" />
-                      <p>{elem.user}</p>
-                    </div>
-                  </section>
+                      <div className='swiper-slide-footer BlogPage__post-card-footer'>
+                        <img src={elem.image} alt="avatar" />
+                        <p>{elem.user}</p>
+                      </div>
+                    </section>
+                  </Link>
                 )}
               </div>
 

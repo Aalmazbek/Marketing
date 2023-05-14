@@ -46,8 +46,8 @@ function App() {
           <Route path='/services' element={<ServicesPage />} />
           <Route path='/case-studies/list' element={<CaseStudiesPage />} />
           <Route path='/case-studies/list/details' element={<CaseStudiesDetailsPage />} />
-          <Route path='/blog' element={<BlogPage />} />
-          <Route path='/blog-details' element={<BlogDetailsPage />} />
+          <Route path='/blog/list' element={<BlogPage />} />
+          <Route path='/blog/details/:id' element={<BlogDetailsPage />} />
           <Route path='/about' element={<AboutPage />} />
           <Route path='/contact' element={<ContactPage />} />
           <Route path='*' element={<NotFoundPage />} />
