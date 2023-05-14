@@ -1,5 +1,5 @@
 .AboutPage {
-    padding-top: 120px;
+    padding: 120px 0 0 0;
 }
 
 .first__container-description {
@@ -297,6 +297,7 @@
 
 
 .key__container {
+    margin-bottom: 120px;
     display: flex;
     flex-direction: column;
     gap: 6vh;
