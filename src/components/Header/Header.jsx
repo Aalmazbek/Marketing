@@ -266,22 +266,22 @@ function Header() {
 
           <div ref={selectModalRef} className={`header__select-modal ${isSelectModal ? 'active' : ''}`}>
             <Link to='/' className={location.pathname === '/' ? 'link-disabled' : ''} onClick={() => setSelectModal(false)}>
-              <Button elem={t("header.home")} mod={location.pathname === '/' && darkScheme ? 'darkMode-disabled' : darkScheme ? 'darkMode' : ''} />
+              <Button elem={t("header.home")} mod={location.pathname === '/' ? 'disabled' : ''} />
             </Link>
             <Link to='/services' className={location.pathname === '/services' ? 'link-disabled' : ''} onClick={() => setSelectModal(false)}>
-              <Button elem={t("header.select.services")} mod={location.pathname === '/services' && darkScheme ? 'darkMode-disabled' : darkScheme ? 'darkMode' : ''} />
+              <Button elem={t("header.select.services")} mod={location.pathname === '/services' ? 'disabled' : ''} />
             </Link>
             <Link to='/case-studies/list' className={location.pathname === '/case-studies/list' ? 'link-disabled' : ''} onClick={() => setSelectModal(false)}>
-              <Button elem={t("header.select.case-studies")} mod={location.pathname === '/case-studies/list' && darkScheme ? 'darkMode-disabled' : darkScheme ? 'darkMode' : ''} />
+              <Button elem={t("header.select.case-studies")} mod={location.pathname === '/case-studies/list' ? 'disabled' : ''} />
             </Link>
-            <Link to='/blog/list' className={location.pathname === '/blog' ? 'link-disabled' : ''} onClick={() => setSelectModal(false)}>
-              <Button elem={t("header.select.blog")} mod={location.pathname === '/blog' && darkScheme ? 'darkMode-disabled' : darkScheme ? 'darkMode' : ''} />
+            <Link to='/blog/list' className={location.pathname === '/blog/list' ? 'link-disabled' : ''} onClick={() => setSelectModal(false)}>
+              <Button elem={t("header.select.blog")} mod={location.pathname === '/blog/list' ? 'disabled' : ''} />
             </Link>
             <Link to='/about' className={location.pathname === '/about' ? 'link-disabled' : ''} onClick={() => setSelectModal(false)}>
-              <Button elem={t("header.select.about-us")} mod={location.pathname === '/about' && darkScheme ? 'darkMode-disabled' : darkScheme ? 'darkMode' : ''} />
+              <Button elem={t("header.select.about-us")} mod={location.pathname === '/about' ? 'disabled' : ''} />
             </Link>
             <Link to='/contact' className={location.pathname === '/contact' ? 'link-disabled' : ''} onClick={() => setSelectModal(false)}>
-              <Button elem={t("header.select.contact")} mod={location.pathname === '/contact' && darkScheme ? 'darkMode-disabled' : darkScheme ? 'darkMode' : ''} />
+              <Button elem={t("header.select.contact")} mod={location.pathname === '/contact' ? 'disabled' : ''} />
             </Link>
           </div>
         </nav>
