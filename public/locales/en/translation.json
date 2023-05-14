@@ -11,7 +11,7 @@
       "case-studies": "Case Studies",
       "blog": "Blog",
       "about-us": "About Us",
-      "contact": "Contacts"
+      "contact": "Contact"
     }
   },
   "offlineSEOAnalyse": {
@@ -247,6 +247,33 @@
       "title": "Great Team Is The Key",
       "description": "Since wire-frame renderings are relatively simple and fast to calculate, they are often used in cases",
       "marketing": "Marketing"
+    }
+  },
+  "ContactPage": {
+    "info": {
+      "visit-us": "Visit us",
+      "address": "508 Bridle Avenue Newnan, GA 30263",
+      "call-us": "Call us",
+      "talk-to-us": "Talk to us",
+      "working-hours": "Working hours",
+      "schedule": "Mon-Fri: 9 am — 6 pm"
+    },
+    "form": {
+      "title": "Ready To Get Started?",
+      "services": "SERVICES",
+      "email-marketing": "Email marketing",
+      "seo": "SEO",
+      "social-marketing": "Social marketing",
+      "research": "Research",
+      "first-name": "First Name",
+      "last-name": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company",
+      "website": "Website",
+      "your-budget": "YOUR BUDGET",
+      "message": "Message",
+      "send-request": "Send Request"
     }
   }
 }
