@@ -230,20 +230,24 @@
   position: absolute!important;
   z-index: 0!important;
 
-  background: linear-gradient(180deg, #000000 20%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(180deg, #000000 20%, rgba(0, 0, 0, 0.5) 100%);
 
-  opacity: 1;
+  opacity: 0.7;
 }
 
 
 
 .BlogPage__post-card-background-image{
-  width: 100%;
   height: 100%;
 
   position: absolute;
+  top: 0;
 
-  object-fit: cover;
+  transition: 1s;
+}
+
+.BlogPage__post-card-background-image.hover{
+  transform: scale(1.2);
 }
 
 
@@ -364,6 +368,11 @@
   display: flex;
   align-items: center;
   gap: 16px;
+
+  border-radius: 16px;
+}
+.BlogPage__posts-aside-recentPosts-card:hover{
+  background-color: rgba(128, 128, 128, 0.1);
 }
 
 

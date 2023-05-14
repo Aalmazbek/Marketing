@@ -176,6 +176,18 @@ function BlogPage() {
   useEffect(() => {
     setCards(postsArray.filter((elem, index) => index >= 0+(page-1)*8 && index < 8*page))
   }, [page])
+
+
+  const imagesRef = useRef([])
+  // const addImages = (e) => images.push(e.target)
+
+  const handleMouseEnter = (id) => {
+    imagesRef.current[id].classList.add('hover')
+  }
+  
+  const handleMouseLeave = (id) => {
+    imagesRef.current[id].classList.remove('hover')
+  }
   
   return (
     <>
@@ -244,11 +256,10 @@ function BlogPage() {
               <div className="BlogPage__posts-main-list">
                 {cards.map((elem, index) => 
                   <Link to={`/blog/details/${index}`}>
-                    <section key={index + elem.day} className={`LatestPosts__swiper-slide BlogPage__post-card`}>
-                      <img className='BlogPage__post-card-background-image' src={elem.backgroundImage} alt="background-image" />
+                    <section key={index + elem.day} className={`LatestPosts__swiper-slide BlogPage__post-card`} onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={() => handleMouseLeave(index)}>
+                      <img ref={el => imagesRef.current[index] = el} className='BlogPage__post-card-background-image' src={elem.backgroundImage} alt="background-image" />
 
-                      <div className='swiper-slide-background BlogPage__post-card-dimming'>
-                      </div>
+                      <div className='swiper-slide-background BlogPage__post-card-dimming'></div>
                       
                       <div className='swiper-slide-header BlogPage__post-card-header'>
                         <p>{elem.day} {elem.month} {elem.year} • {elem.min} mins read</p>
@@ -294,13 +305,16 @@ function BlogPage() {
 
               <div className="BlogPage__posts-aside-recentPosts">
                 <h1>Recent Posts</h1>
-                {postsArray.map((elem, index) => index < 3?  <div key={Date.now() + index} className='BlogPage__posts-aside-recentPosts-card'>
-                  <img src={elem.backgroundImage} alt={`${elem.title}`} />
-                  <div>
-                    <h1>{elem.title}</h1>
-                    <span>{elem.day} {elem.month} {elem.year} • {elem.min} mins read</span>
-                  </div>
-                </div> : '')}
+                {postsArray.map((elem, index) => index < 3?  
+                  <Link to={`/blog/details/${index}`}>
+                    <div key={Date.now() + index} className='BlogPage__posts-aside-recentPosts-card'>
+                      <img src={elem.backgroundImage} alt={`${elem.title}`} />
+                      <div>
+                        <h1>{elem.title}</h1>
+                        <span>{elem.day} {elem.month} {elem.year} • {elem.min} mins read</span>
+                      </div>
+                    </div> 
+                  </Link> : '')}
               </div>
 
               <div className="BlogPage__posts-aside-popularTags">
