@@ -12,7 +12,6 @@ import "swiper/css/pagination";
 
 
 import './CaseStudiesPage.css'
-import css from './CaseStudiesPage.module.css'
 import prevArrowIcon from './assets/prev-arrow-icon.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
@@ -232,6 +231,7 @@ function CaseStudiesPage() {
                     return '<span class="' + className + '">' + (index + 1) + '</span>'
                   }
                 }}
+                speed={0}
                 modules={[Grid, Pagination, Navigation]}
                 className="CaseStudies__list-swiper"
               >
