@@ -138,5 +138,115 @@
         "share": "Share"
       }
     }
+  },
+  "HomePage": {
+    "first__container": {
+      "title": "Digital Marketing",
+      "h1": "Boosts Your Website Traffic",
+      "p": "Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit amet eros.",
+      "button-1": "Try for free",
+      "button-2": "See Our Work"
+    },
+    "second__container": {
+      "title": "ABOUT US",
+      "h1": "Who We Are",
+      "p": "In hac habitasse platea dictumst. Aliquam lobortis. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In dui magna, posuere eget, vestibulum et, tempor auctor, justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      "button": "Learn more",
+      "projects": "PROJECTS",
+      "clients": "Happy CLIENTS",
+      "experience": "YEARS OF EXPERIENCE"
+    },
+    "third__container": {
+      "title": "Our Services",
+      "h1": "We Provide",
+      "seo": "SEO",
+      "email": "Email Marketing",
+      "search": "Search Engine Oprimization",
+      "social": " Social Marketing"
+    },
+    "forth__container": {
+      "title": "Work Flow",
+      "h1": "Working Process",
+      "planning": "Planning",
+      "research": "Research",
+      "optimizing": "Optimizing",
+      "results": "Results"
+    },
+    "our__work": {
+      "title": "Our Work",
+      "h1": "Case Studies",
+      "branding": "branding",
+      "social": "SOCIAL",
+      "marketing": "маркетинг",
+      "button": "Learn more",
+      "seo": "SEO",
+      "web": "WEB",
+      "button-2": "View All",
+      "bank": "Bank of America"
+    },
+    "team__container": {
+      "title": "Team",
+      "h1": "Meet Our Team",
+      "designer": "UI Designer",
+      "developer": "Full Stack Developer",
+      "manager": "Project Manager"
+    },
+    "pricing__container": {
+      "title": "Pricing",
+      "h1": "Check Our Pricing",
+      "choose": "Choose the perfect plan for your needs. Always flexible to grow",
+      "monthly": "MONTHLY",
+      "yearly": "YEARLY (save 10%)"
+    },
+    "blocks__container": {
+      "basic": "Basic",
+      "standard": "Standard",
+      "premium": "Premium",
+      "auto": "Auto update mode",
+      "online": "Online operator 24/7",
+      "posting": "International posting",
+      "unique": "Unique newsletters",
+      "design": "20 Design templates",
+      "button": "Get Started"
+    },
+    "FAQS__container": {
+      "title": "FAQS",
+      "h1": "Frequently Asked Questions"
+    }
+  },
+  "AboutPage": {
+    "first__container": {
+      "title": "Who We Are?",
+      "button": "Check Our Work"
+    },
+    "second__container": {
+      "experience": "Years of experience",
+      "awards": "Awards",
+      "projects": "Projects",
+      "clients": "Happy clients"
+    },
+    "vision__container": {
+      "title": "Our Vision",
+      "description": "Our vision offering the best product nulla vehicula tortor scelerisque ultrices malesuada. "
+    },
+    "value__container": {
+      "title": "Our Core Values",
+      "customer": "Customer Satisfaction",
+      "transparency": "Transparency",
+      "reputation": "Reputation",
+      "cooperation": "Cooperation"
+    },
+    "story__container": {
+      "title": "Our Story",
+      "business": "Business Conception",
+      "rewiew": "Legal Rewiew",
+      "design": "Infrastucture Design",
+      "company": "Company Established"
+    },
+    "key__container": {
+      "title": "Great Team Is The Key",
+      "description": "Since wire-frame renderings are relatively simple and fast to calculate, they are often used in cases",
+      "marketing": "Marketing"
+    }
   }
 }
