@@ -33,7 +33,7 @@ function AboutPage() {
   const { t } = useTranslation()
 
   return (
-    <section>
+    <section className='AboutPage'>
 
       <div className={`container first__container`}>
         <img src={firstIcon} alt="" />

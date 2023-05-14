@@ -38,7 +38,7 @@ function HomePage() {
 
   return (
 
-    <section>
+    <section className='HomePage'>
       <div className={`container  first__container`}>
         <div className={`first__container-description`}>
           <p>{t("HomePage.first__container.title")}</p>
