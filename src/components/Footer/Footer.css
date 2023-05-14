@@ -13,6 +13,10 @@ footer{
 }
 
 
+.footer__newsletter-container > section{
+  padding-top: 0;
+}
+
 .footer__newsletter-title{
   display: flex;
   align-items: center;
@@ -103,6 +107,10 @@ footer{
   justify-content: space-between;
 }
 
+
+.footer__main-content > section{
+  padding-top: 0;
+}
 
 .footer__title{
   width: 100%;
@@ -219,6 +227,8 @@ footer{
 
 .footer__copyright{
   width: 100%;
+
+  padding-top: 0;
 
   display: flex;
   align-items: center;

@@ -3,6 +3,7 @@ import {useTranslation} from 'react-i18next'
 import { styled } from '@mui/material/styles';
 import Switch, { SwitchProps } from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import { Link, useLocation } from 'react-router-dom'
 
 import './Header.css'
 import css from './Header.module.css'
@@ -21,7 +22,6 @@ import crossIconDark from './assets/crossIcon-darkMode.svg'
 import Button from '../Button/Button'
 import { useDispatch, useSelector } from 'react-redux'
 import { changeLang, changeScheme } from '../../redux'
-import { Link, useLocation } from 'react-router-dom'
 import { useOutsideClick, useOutsideClickv2 } from '../../hooks';
 
 

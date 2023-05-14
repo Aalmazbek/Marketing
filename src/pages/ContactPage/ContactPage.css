@@ -1,0 +1,369 @@
+.ContactPage__article{
+  padding-top: 95px;
+
+  overflow: hidden;
+}
+
+
+.ContactPage__container{
+  padding: 60px 0 80px 0;
+}
+
+
+.ContactPage__container > section{
+  padding: 0;
+}
+
+
+.ContactPage__info{
+  width: 45%;
+  max-width: 366px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
+.ContactPage__info > img{
+  width: 100%;
+}
+
+
+
+.ContactPage__info > div{
+  display: flex;
+  gap: 20px;
+}
+
+
+.ContactPage__info > div > img{
+  height: 24px;
+}
+
+
+
+.ContactPage__info > div span{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
+.ContactPage__info > div span h1{
+  font-size: 18px;
+}
+
+
+
+address{
+  font-style: normal;
+}
+
+
+
+
+
+.ContactPage__form-wrapper{
+  width: 50%;
+}
+
+
+.ContactPage__form-wrapper h1{
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+
+
+
+.ContactPage__form{
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+
+.ContactPage__form fieldset{
+  border: none;
+}
+
+
+.ContactPage__form legend{
+  margin-bottom: 20px;
+
+  color: var(--p-color-dark);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+
+
+.ContactPage__form-checkboxes > div{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.ContactPage__form-checkbox{
+  padding: 5px 0;
+}
+
+
+.ContactPage__form-checkbox input{
+  display: none;
+}
+
+
+
+.ContactPage__form-checkbox span{
+  padding: 5px 15px;
+
+  border: 1px solid rgba(var(--p-color-dark-rgb), 0.32);
+  border-radius: 8px;
+
+  color: var(--p-color);
+  white-space: nowrap;
+
+  user-select: none;
+  cursor: pointer;
+}
+
+
+.ContactPage__form-checkbox input:checked + span{
+  background-color: rgba(33, 43, 54, 1);
+  color: white;
+}
+
+
+
+
+.ContactPage__form-inputs{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+    "first last"
+    "email email"
+    "phone phone"
+    "comp web";
+  grid-gap: 20px 16px;
+}
+
+
+.ContactPage__form input, .ContactPage__form-textarea{
+  min-width: 0px;
+  min-height: 56px;
+  height: 56px;
+
+  background-color: rgba(var(--p-color-dark-rgb), 0.1);
+
+  border: none;
+  border-radius: 8px;
+}
+.ContactPage__form input::placeholder, .ContactPage__form-textarea::placeholder{
+  color: var(--p-color-dark);
+}
+
+.ContactPage__form-firstName{
+  grid-area: first;
+}
+
+
+
+.ContactPage__form-lastName{
+  grid-area: last;
+}
+
+
+
+.ContactPage__form-email{
+  grid-area: email;
+}
+
+
+
+.ContactPage__form-number{
+  grid-area: phone;
+}
+
+
+
+.ContactPage__form-company{
+  grid-area: comp;
+}
+
+
+
+.ContactPage__form-website{
+  grid-area: web;
+}
+
+
+
+
+.ContactPage__form-rangeSlider{
+}
+
+
+
+
+.ContactPage__form-textarea{
+  width: 100%;
+  height: 125px;
+
+  padding: 15px;
+
+  line-height: 150%;
+}
+
+
+
+
+.ContactPage__form > button{
+  width: fit-content;
+
+  padding: 11px 22px;
+
+  font-size: 15px;
+  line-height: 185%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.App-dark .ContactPage__container{
+  align-items: flex-start;
+}
+
+
+.App-dark .ContactPage__info > div > img{
+  filter: contrast(0) brightness(200%);
+}
+
+
+
+
+
+.App-dark .ContactPage__form legend{
+  color: var(--p-color);
+}
+
+
+
+.App-dark .ContactPage__form-checkbox span{
+  color: var(--p-color-dark);
+}
+
+
+.App-dark .ContactPage__form-checkbox input:checked + span{
+  background-color: white;
+  color: rgba(33, 43, 54, 1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1023px){
+  .ContactPage__article{
+    padding-top: 80px;
+  }
+
+
+  .ContactPage__container{
+    padding-top: 40px;
+
+    flex-direction: column;
+    gap: 70px;
+  }
+
+
+  .ContactPage__form-wrapper{
+    width: 100%;
+    max-width: 500px;
+
+    order: -1;
+  }
+
+
+  .ContactPage__form-wrapper > h1{
+    text-align: center;
+  }
+
+
+
+  .ContactPage__form{
+    align-items: center;
+  }
+
+
+  .ContactPage__form fieldset{
+    width: 100%;
+  }
+
+
+
+  .ContactPage__form button{
+    width: 100%;
+    max-width: 400px;
+  }
+
+
+
+
+
+  .ContactPage__info{
+    width: 100%;
+    max-width: 375  px;
+  }
+
+
+  .ContactPage__info > img{
+    display: none;
+
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 576px){
+  .ContactPage__form-wrapper > h1{
+    font-size: 32px;
+  }
+}
