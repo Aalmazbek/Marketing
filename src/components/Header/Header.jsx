@@ -274,7 +274,7 @@ function Header() {
             <Link to='/case-studies/list' className={location.pathname === '/case-studies/list' ? 'link-disabled' : ''} onClick={() => setSelectModal(false)}>
               <Button elem={t("header.select.case-studies")} mod={location.pathname === '/case-studies/list' ? 'disabled' : ''} />
             </Link>
-            <Link to='/blog/list' className={location.pathname === '/blog' ? 'link-disabled' : ''} onClick={() => setSelectModal(false)}>
+            <Link to='/blog/list' className={location.pathname === '/blog/list' ? 'link-disabled' : ''} onClick={() => setSelectModal(false)}>
               <Button elem={t("header.select.blog")} mod={location.pathname === '/blog' ? 'disabled' : ''} />
             </Link>
             <Link to='/about' className={location.pathname === '/about' ? 'link-disabled' : ''} onClick={() => setSelectModal(false)}>
