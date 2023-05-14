@@ -129,9 +129,9 @@ function BlogDetailsPage({match}) {
         <div className='container BlogDetailsPage__nav-container'>
             <Link to='/'>{t('header.home')}</Link>
             <img src={arrowIcon1} alt="arrow-icon" />
-            <Link to='/case-studies/list'>{t('header.select.blog')}</Link>
+            <Link to='/blog/list'>{t('header.select.blog')}</Link>
             <img src={arrowIcon1} alt="arrow-icon" />
-            <Link to='/case-studies/list/details' className='link-disabled'>{currentPost.title.length > 20 ? currentPost.title.substring(0, 19)+'...' : currentPost.title}</Link>
+            <Link to='/blog/list' className='link-disabled'>{currentPost.title.length > 20 ? currentPost.title.substring(0, 19)+'...' : currentPost.title}</Link>
         </div>
       </nav>
 
