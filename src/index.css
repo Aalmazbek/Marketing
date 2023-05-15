@@ -8,6 +8,11 @@
 }
 
 
+html{
+  overflow-y: overlay;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -30,4 +35,20 @@ code {
   --p-color-rgb: 99, 115, 129;
   --p-color-dark: rgba(145, 158, 171, 1);
   --p-color-dark-rgb: 145, 158, 171;
+}
+
+
+
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--main-orange);
+  border-radius: 1px;
 }

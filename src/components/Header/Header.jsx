@@ -104,7 +104,6 @@ function Header() {
 
   
   
-  // const [isSearchModal, setSearchModal] = useState(false)
   const [isMobileSelect, setMobileSelect] = useState(false)
 
 
@@ -126,13 +125,6 @@ function Header() {
   const [isScrolledDown, setisScrolledDown] = useState(false)
 
   const header = useRef()
-
-
-  const handleClickOutside = (e, modal, setIsModal) => {
-    if (!e.composedPath().includes(modal.current)) {
-      setIsModal(false)
-    }
-  }
 
 
 
@@ -204,7 +196,6 @@ function Header() {
 
 
   const logoFunc = () => {
-    // console.log(location.pathname);
     if (darkScheme) {
         if (location.pathname === '/services') {
         if (isPinned) {
@@ -358,7 +349,9 @@ function Header() {
 
         <div ref={mobileMenuModalRef} className={`container mobile-header__menu-modal ${isMobileMenuModal ? 'mobile-header__menu-modal_active' : ''} ${darkScheme ? 'mobile-header__menu-modal-dark' : ''}`}>
           <div className='container mobile-header__menu-modal-header'>
-            <img className={`header__logo mobile-header__logo`} src={darkScheme ? mainLogoDark : mainLogoLight} alt="ZONE logo" />
+            <Link to='/'>
+              <img className={`header__logo mobile-header__logo`} src={darkScheme ? mainLogoDark : mainLogoLight} alt="ZONE logo" />
+            </Link>
 
             <div>
               <FormControlLabel
@@ -396,8 +389,12 @@ function Header() {
           
 
           <nav className={`mobile-header__links`}>
-            <Button elem={t("header.home")}/>
-            <Button elem={t("header.components")}/>
+            <Link to='/' className={'link ' + location.pathname === '/' ? 'link-disabled' : ''}>
+              <Button elem={t("header.home")} mod={location.pathname === '/' ? 'disabled' : ''} />
+            </Link>
+            <a href="#">
+              <Button elem={t("header.components")}/>
+            </a>
             <Button 
               className={`header__select-button`}
               elem={
@@ -418,8 +415,8 @@ function Header() {
               <Link to='/case-studies/list' className={location.pathname === '/case-studies/list' ? 'link-disabled' : ''} onClick={() => setIsMobileMenuModal(false)}>
                 <Button elem={t("header.select.case-studies")} mod={location.pathname === '/case-studies/list' ? 'disabled' : ''} />
               </Link>
-              <Link to='/blog/list' className={location.pathname === '/blog' ? 'link-disabled' : ''} onClick={() => setIsMobileMenuModal(false)}>
-                <Button elem={t("header.select.blog")} mod={location.pathname === '/blog' ? 'disabled' : ''} />
+              <Link to='/blog/list' className={location.pathname === '/blog/list' ? 'link-disabled' : ''} onClick={() => setIsMobileMenuModal(false)}>
+                <Button elem={t("header.select.blog")} mod={location.pathname === '/blog/list' ? 'disabled' : ''} />
               </Link>
               <Link to='/about' className={location.pathname === '/about' ? 'link-disabled' : ''} onClick={() => setIsMobileMenuModal(false)}>
                 <Button elem={t("header.select.about-us")} mod={location.pathname === '/about' ? 'disabled' : ''} />
@@ -428,7 +425,9 @@ function Header() {
                 <Button elem={t("header.select.contact")} mod={location.pathname === '/contact' ? 'disabled' : ''} />
               </Link>
             </div>
-            <Button elem={t("header.documentation")}/>
+            <a href="#">
+              <Button elem={t("header.documentation")}/>
+            </a>
           </nav>
         </div>
       </div>
