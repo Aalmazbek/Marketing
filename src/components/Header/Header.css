@@ -413,7 +413,7 @@ hr{
 }
 
 
-.mobile-header__links > button{
+.mobile-header__links > button, .mobile-header__links > a > button{
   width: 100%;
 
   padding: 30px 0;
@@ -423,6 +423,11 @@ hr{
 
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0;
+}
+
+.mobile-header__links > a{
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 
@@ -654,11 +659,11 @@ hr{
 
 
 
-.mobile-header__menu-modal-dark .mobile-header__links > button{
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+.mobile-header__menu-modal-dark .mobile-header__links > button, .App-dark .mobile-header__links > a{
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
-.mobile-header__menu-modal-dark .mobile-header__links > button:active{
+.mobile-header__menu-modal-dark .mobile-header__links button:active{
   background: rgba(255, 255, 255, 0.2);
 }
 

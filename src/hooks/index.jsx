@@ -24,7 +24,7 @@ export const useOutsideClick = (elementRef, handler, attached) => {
     
     const handleClick = (e) => {
       if (!elementRef.current) return;
-      if (!elementRef.current.contains(e.target)) {
+      if (!e.composedPath().includes(elementRef.current)) {
         latestHandler.current();
       }
     }

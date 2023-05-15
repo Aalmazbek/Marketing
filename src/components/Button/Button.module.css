@@ -148,6 +148,11 @@
 }
 
 
+.disabled *{
+  color: rgba(145, 158, 171, 0.5)!important;
+}
+
+
 
 
 
